@@ -53,7 +53,7 @@
 		<link href="${pageContext.request.contextPath }/lib/css/style.css"
 			rel="stylesheet" type="text/css" />
 
-		<title>卡卡挪车-超级管理员后台</title>
+		<title>115挪车-超级管理员后台</title>
 		<meta name="keywords"
 			content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 		<meta name="description"

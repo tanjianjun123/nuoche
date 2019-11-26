@@ -63,7 +63,7 @@ public class WeiXinChangeTelAction {
 		String phone = request.getParameter("phone");
 		//发送验证码，得到验证码
 		String code=SmsUtil.createCode(4);
-		String content="您的验证码为:"+code+"。此验证码用于卡卡挪车会员修改手机号码。10分钟内有效。";
+		String content="您的验证码为:"+code+"。此验证码用于115挪车会员修改手机号码。10分钟内有效。";
 		//  保存验证码到  验证码表
 		wxChangeTelService.saveCode(code, phone);
 		//System.out.println(content);

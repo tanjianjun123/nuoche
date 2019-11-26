@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <base href="<%=basePath%>">
-<title>卡卡挪车管理后台</title>
+<title>115挪车管理后台</title>
 <meta http-equiv="X-UA-Compatible" content="IE=9">  
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
       <%-- <img style="width: 80px;height: 80px;margin-top: 5px;" alt="国湘人力" src="${pageContext.request.contextPath }/images/logo.jpg" />
        --%><div style="padding-top:25px;font-weight: bold;">
-                 <h1>&nbsp;卡卡挪车管理后台 </h1>
+                 <h1>&nbsp;115挪车管理后台 </h1>
       </div>          
                   
       
@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    </div>
    <div class="login_bottom">
         
-        <span class="login_gongsixinxi">深圳光华软件有限公司提供技术支持</span>
+        <span class="login_gongsixinxi">安徽华初网络科技有限公司提供技术支持</span>
         
    </div> 
 </body>

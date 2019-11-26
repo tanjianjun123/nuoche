@@ -28,7 +28,6 @@ import com.pojo.Proxy;
 import com.pojo.User;
 import com.qq.connect.utils.http.Response;
 import com.service.daili.DailiService;
-import com.service.daili.DailiServiceService;
 import com.service.daili.DailiUserService;
 import com.util.StringUtil;
 
@@ -44,7 +43,7 @@ import bsh.ParseException;
 public class DailiUserAction {
 
 	@Autowired
-	private DailiUserService userService;
+	private DailiUserService dailiUserService;
 	@Autowired
 	private HttpServletRequest request;
 	
@@ -66,7 +65,7 @@ public class DailiUserAction {
 			return "请登录先";
 		}
 		
-	   String str = userService.changeUserProxy(_proxy,proxy,uid);
+	   String str = dailiUserService.changeUserProxy(_proxy,proxy,uid);
 	   
 		
 	   return str;
@@ -87,7 +86,7 @@ public class DailiUserAction {
 		if (StringUtil.isNotNull(sizeString) && sizeString.trim().length() > 0)
 			size = Integer.parseInt(sizeString);
 		int type = 1;
-		Map usersmap = userService.ssuserlisting(page, size, type, tel, keywords);
+		Map usersmap = dailiUserService.ssuserlisting(page, size, type, tel, keywords);
 		request.setAttribute("usersmap", usersmap);
 		return "/daili/userlisting.jsp";
 
@@ -110,7 +109,7 @@ public class DailiUserAction {
 		if (StringUtil.isNotNull(sizeString) && sizeString.trim().length() > 0)
 			size = Integer.parseInt(sizeString);
 		int type = Integer.parseInt(request.getParameter("type"));
-		Map usersmap = userService.userlisting(page, size, type, tel);
+		Map usersmap = dailiUserService.userlisting(page, size, type, tel);
 		request.setAttribute("usersmap", usersmap);
 		return "/daili/userlisting.jsp";
 	}
@@ -122,7 +121,7 @@ public class DailiUserAction {
 	public String bianjiyonghu() {
 		int uid = Integer.parseInt(request.getParameter("uid"));
 		int id = Integer.parseInt(request.getParameter("id"));
-		User user = userService.findbyid(uid);
+		User user = dailiUserService.findbyid(uid);
 		Proxy proxy = (Proxy) request.getSession().getAttribute("proxy");
 		String name = proxy.getRealname();
 		String date = df.format(user.getOverdueTime());
@@ -143,7 +142,7 @@ public class DailiUserAction {
 		short role = Short.parseShort(request.getParameter("user_role"));
 		Timestamp overtime = null;
 		if (strovertime.length() == 0) {
-			overtime = userService.findbyid(id).getOverdueTime();
+			overtime = dailiUserService.findbyid(id).getOverdueTime();
 		} else {
 			DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			try {
@@ -152,13 +151,13 @@ public class DailiUserAction {
 				e.printStackTrace();
 			}
 		}
-		userService.zsg(id, role, overdue, user_address, user_tel, overtime);
+		dailiUserService.zsg(id, role, overdue, user_address, user_tel, overtime);
 		Proxy proxy = (Proxy) request.getSession().getAttribute("proxy");
 		int tel = proxy.getId();
 		int page = 1;
 		int size = 10;
 		int type = 1;
-		Map usersmap = userService.userlisting(page, size, type, tel);
+		Map usersmap = dailiUserService.userlisting(page, size, type, tel);
 		request.setAttribute("usersmap", usersmap);
 		return "/daili/userlisting.jsp";
 	}
@@ -195,7 +194,7 @@ public class DailiUserAction {
 			if (keywords != null)
 				keywords = new String(keywords.getBytes("iso8859-1"), "utf-8");
 		}
-		Map yuyueordermap = userService.yuyueorderlisting(size, status, page, begintime, endtime, keywords);
+		Map yuyueordermap = dailiUserService.yuyueorderlisting(size, status, page, begintime, endtime, keywords);
 		request.setAttribute("yuyueordermap", yuyueordermap);
 		request.setAttribute("status", status);
 		request.setAttribute("keywords", keywords);

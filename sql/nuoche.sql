@@ -1235,13 +1235,13 @@ COMMIT;
 #
 
 INSERT INTO `userinfo` (`usersId`, `usersName`, `usersPhone`, `usersArea`, `usersHeadimg`, `usersStatus`, `usersGender`, `usersRemark`, `usersCreatetime`, `usersIntegral`, `usersType`, `usersPassword`, `usersCode`) VALUES 
-  (4,'卡卡挪车',NULL,'',NULL,1,NULL,NULL,'2018-05-15 16:58:55',0.00,0,NULL,NULL),
+  (4,'115挪车',NULL,'',NULL,1,NULL,NULL,'2018-05-15 16:58:55',0.00,0,NULL,NULL),
   (12,'LGH',NULL,'',NULL,1,NULL,NULL,'2018-05-15 19:39:36',0.00,0,NULL,NULL),
   (16,'Eugene',NULL,'',NULL,1,NULL,NULL,'2018-05-15 23:40:06',0.00,0,NULL,NULL),
   (17,'%E5%B0%8F%E7%A3%8A',NULL,'',NULL,1,NULL,NULL,'2018-05-17 21:09:19',0.00,0,NULL,NULL),
   (18,'%E4%BC%AF%E7%89%B9%E5%88%A9',NULL,'',NULL,1,NULL,NULL,'2018-05-18 05:19:04',0.00,0,NULL,NULL),
   (19,'je''mi',NULL,'',NULL,1,NULL,NULL,'2018-05-19 15:10:23',0.00,0,NULL,NULL),
-  (20,'卡卡挪车',NULL,'',NULL,1,NULL,NULL,'2018-05-19 20:46:36',0.00,0,NULL,NULL),
+  (20,'115挪车',NULL,'',NULL,1,NULL,NULL,'2018-05-19 20:46:36',0.00,0,NULL,NULL),
   (21,'梦里',NULL,'',NULL,1,NULL,NULL,'2018-05-20 11:05:03',0.00,0,NULL,NULL),
   (22,'Nicholas·S',NULL,'',NULL,1,NULL,NULL,'2018-05-21 19:49:24',0.00,0,NULL,NULL),
   (23,'小王子',NULL,'',NULL,1,NULL,NULL,'2018-05-24 19:20:24',0.00,0,NULL,NULL),
@@ -4891,7 +4891,7 @@ COMMIT;
 INSERT INTO `weixin_user` (`openid`, `tjr`, `status`, `nickname`, `headimage`, `tuijianren`, `wxtel`, `timeLeft`, `sfz`, `name`, `time`, `cejiahao`, `fadonjihao`, `cepai`, `userinfoId`, `jiayou_yuer`) VALUES 
   ('oMD5s1gBQvPD6btVMOvGRN2jY1sI',NULL,1,'梦里','http://thirdwx.qlogo.cn/mmopen/mnZnCfGc8E16XHYLfoZQfTib90be1zUFWnrwYvJwEibbaOgrLsUuTpmzLicLuLPicy2EpIm1xMmWvWv9XGicuJYzZMfz9tbPpmhxK/132',NULL,NULL,NULL,NULL,NULL,'2018-05-20 11:05:03',NULL,NULL,NULL,21,0),
   ('oMD5s1h1EKlwgNqQaPqdICen6dBo',17,1,'io','http://thirdwx.qlogo.cn/mmopen/INk4JvWfe8WGtcxuKGWNuUJKHriakLHIEKpic4WYYT5ocJzwOwFiae9jsGEbJwx8xuGOSgEKByflYN8iaXmn11PibhZDLJuib5SjRK/132',NULL,NULL,NULL,NULL,NULL,'2018-05-30 09:28:58',NULL,NULL,NULL,NULL,0),
-  ('oMD5s1hPlvOTIzJdYzkIktofxKPs',9,1,'卡卡挪车','http://thirdwx.qlogo.cn/mmopen/INk4JvWfe8WAozDzfOEr5bdZxtXWOKscS0jW9xguUIQdukuwSYtPSaeXMVVp61KiaZXXusw0eT5EA04v3D6xbhVOM5EFnbGol/132',NULL,'15675352506',9,'2','5','2018-05-15 00:00:00','3','1','4',20,0),
+  ('oMD5s1hPlvOTIzJdYzkIktofxKPs',9,1,'115挪车','http://thirdwx.qlogo.cn/mmopen/INk4JvWfe8WAozDzfOEr5bdZxtXWOKscS0jW9xguUIQdukuwSYtPSaeXMVVp61KiaZXXusw0eT5EA04v3D6xbhVOM5EFnbGol/132',NULL,'15675352506',9,'2','5','2018-05-15 00:00:00','3','1','4',20,0),
   ('oMD5s1iYVyVlaUmPaa3kRr_yNW64',10,1,'伯特利','http://thirdwx.qlogo.cn/mmopen/aj1vicYUegNhy0Fokcjr9tLRANpJGDkotEgCfm76NGKcF1tqGbFuXz9UzrFgoA3CiaORrjjib7apgmrlY9r2HuXXmHicNQ0rice67/132',NULL,NULL,NULL,'231025198808194037','陈志强','2018-05-16 00:00:00','v吃小臭臭','H01502173B','鲁Y912H8',18,0),
   ('oMD5s1iZXDKNeh8B6k8cs06H5RYI',31,1,'Shane','http://thirdwx.qlogo.cn/mmopen/mnZnCfGc8E0icSy3yoEGRah6tT13CxjJVwbicODiaUn0nHiaYqnHiav90juib27H6xA8WlDp8H7LHuPpibw8tz6nEcyjb7sBCwDXZsl/132',NULL,NULL,NULL,NULL,NULL,'2018-07-14 16:28:51',NULL,NULL,NULL,NULL,0),
   ('oMD5s1j9FTUirGTpaalX2kHrUO2U',29,1,'姜丹','http://thirdwx.qlogo.cn/mmopen/INk4JvWfe8XlZnogiapThGlwPh24W16sviagEiagI1VdVuhrG4eWr5zQvLWIxaWZK9SZgSNJoxxjusWUDJlZTibBV8LboXbPN5ja/132',NULL,NULL,NULL,NULL,NULL,'2018-06-11 23:56:25',NULL,NULL,NULL,26,0),

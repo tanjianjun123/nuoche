@@ -11,7 +11,7 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-<title>卡卡挪车</title>
+<title>115挪车</title>
 <meta http-equiv="X-UA-Compatible" content="IE=9">
 
 <meta http-equiv="pragma" content="no-cache">
@@ -43,7 +43,7 @@
 		<div class="main_top" style="height: 400px;">
 			<div class="main_logo">
 				
-				<div class="main_wenzi">卡卡挪车&nbsp;隐私专家</div>
+				<div class="main_wenzi">115挪车&nbsp;隐私专家</div>
 				<div class="main_xuanze">
 					<div class="main_changshang" id="main_yunshu">合作伙伴
 						<div class="barcode" id="main_danwei" style="display: none;">

@@ -16,6 +16,7 @@ public class Applydetail implements java.io.Serializable {
 	private PeisongCorp peisongCorp;
 	//微信用户
 	private WeixinUser weixinUser;
+	
 	//订单id
 	private String orderId;
 	//微信订单id
@@ -274,5 +275,4 @@ public class Applydetail implements java.io.Serializable {
 	public void setB2(String b2) {
 		this.b2 = b2;
 	}
-
 }

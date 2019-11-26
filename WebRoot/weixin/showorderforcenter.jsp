@@ -37,7 +37,7 @@ user-scalable - 用户是否可以手动缩放-->
 <script type="text/javascript" src = "${pageContext.request.contextPath }/weixin/js/jquery.form.js"></script>
 <script type="text/javascript" src = "${pageContext.request.contextPath }/weixin/js/popwin.js"></script>
          
-<title>卡卡挪车</title>
+<title>115挪车</title>
 
 </head>
 <body>
@@ -55,7 +55,7 @@ user-scalable - 用户是否可以手动缩放-->
 		<li class="paymentB">
 			<img src="${pageContext.request.contextPath }/weixin/images/main_20.jpg">
 		    <div class="paymentBT">
-		    	<div class="paymentBTa">卡卡挪车二维码车贴，保护亿万车主隐私</div>
+		    	<div class="paymentBTa">115挪车二维码车贴，保护亿万车主隐私</div>
 		    	<div class="paymentBTb">
 		    	    <span>¥ ${applydetail.totalFee/applydetail.cardNum }</span>
 		    	    <strong>×${applydetail.cardNum }</strong>

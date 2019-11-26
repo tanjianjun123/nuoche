@@ -61,7 +61,7 @@ public class SendVoiceUtil {
 		String appid = "VM89339958";
 		String key = "00a8595b05494541fccaf413525fd8e2";
 		String callHe = phone;
-		String _content = "尊敬的%s车主您好，这里是卡卡挪车系统，您的爱车位于：%s，影响他人正常使用，请您及时处理，谢谢！";
+		String _content = "尊敬的%s车主您好，这里是115挪车系统，您的爱车位于：%s，影响他人正常使用，请您及时处理，谢谢！";
 		String content = String.format(_content, car, address);
 		String url = "http://api.vm.ihuyi.com/webservice/voice.php?method=Submit";
 		;

@@ -23,7 +23,7 @@ import com.util.StringUtil;
  * @author 冯慧
  * 
  */
-@Service
+@Service("dailiManageService")
 public class DailiManageService {
 	@Autowired
 	private ProxyDAO proxyDAO;

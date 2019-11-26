@@ -63,7 +63,7 @@ public class Call2 {
 		String callHe = "15673350001";
 		String car = "湘B12345";
 		String address = "湖南工业大学";
-		String _content = "尊敬的%s车主您好，这里是卡卡挪车系统，您的爱车位于：%s，影响他人正常使用，请您及时处理，谢谢！";
+		String _content = "尊敬的%s车主您好，这里是115挪车系统，您的爱车位于：%s，影响他人正常使用，请您及时处理，谢谢！";
         String content = String.format(_content, car,address);
 		String url = "http://api.vm.ihuyi.com/webservice/voice.php?method=Submit";;
 		HttpClient client = new HttpClient();

@@ -33,7 +33,7 @@ user-scalable - 用户是否可以手动缩放-->
 <script type="text/javascript" src = "${pageContext.request.contextPath }/weixin/js/jquery.form.js"></script>
 <script type="text/javascript" src = "${pageContext.request.contextPath }/weixin/js/popwin.js"></script>
        
-<title>卡卡挪车</title>
+<title>115挪车</title>
 
 <style type="text/css">
 
@@ -70,7 +70,7 @@ body{ padding:0 0 10px 0; height: 100%; box-sizing: border-box; overflow: visibl
 					<a href="${pageContext.request.contextPath }/ordercenter.do?method=showorder&openId=${list.weixinUser.openid }&orderid=${list.orderId}" class="paymentB">
 						<img src="${pageContext.request.contextPath }/weixin/images/main_20.jpg">
 						<div class="paymentBT">
-							<div class="paymentBTa">卡卡挪车二维码车贴，保护亿万车主隐私</div>
+							<div class="paymentBTa">115挪车二维码车贴，保护亿万车主隐私</div>
 								<div class="paymentBTb">
 										<span>￥ ${list.totalFee/list.cardNum }</span>
 										<strong>×${list.cardNum }</strong>
@@ -147,7 +147,7 @@ body{ padding:0 0 10px 0; height: 100%; box-sizing: border-box; overflow: visibl
 <script type="text/javascript">
 var host = "http://kknc.wang";
 var link = host+"/attend.jsp";
-var title="卡卡挪车扫码隐号挪车贴";
+var title="115挪车扫码隐号挪车贴";
 var desc = "保护隐私远离骚扰，千万车主都在用，速抢！";
 var sharepic =host+"/static_files/images/logo.jpg";
 var shareParams={
@@ -243,7 +243,7 @@ var shareParams={
 							m=m+'<a href="'+pathnuoche+'/ordercenter.do?method=showorder&openId='+json[i].weixinUser.openid+'&orderid='+json[i].orderId+'" class="paymentB">';
 								m=m+'<img src="'+pathnuoche+'/weixin/images/main_20.jpg">';
 								m=m+'<div class="paymentBT">';
-									m=m+'<div class="paymentBTa">卡卡挪车二维码车贴，保护亿万车主隐私</div>';
+									m=m+'<div class="paymentBTa">115挪车二维码车贴，保护亿万车主隐私</div>';
 										m=m+'<div class="paymentBTb">';
 												m=m+'<span>￥ '+json[i].totalFee/json[i].cardNum +'</span>';
 												m=m+'<strong>×'+json[i].cardNum+'</strong>';
@@ -302,7 +302,7 @@ var shareParams={
 							m = m+'<a href="'+pathnuoche+'/ordercenter.do?method=showorder&openId='+json[i].weixinUser.openid+'&orderid='+json[i].orderId+'" class="paymentB">';
 								m = m+'<img src="'+pathnuoche+'/weixin/images/main_20.jpg">';
 								m = m+'<div class="paymentBT">';
-									m = m+'<div class="paymentBTa">卡卡挪车二维码车贴，保护亿万车主隐私</div>';
+									m = m+'<div class="paymentBTa">115挪车二维码车贴，保护亿万车主隐私</div>';
 										m = m+'<div class="paymentBTb">';
 												m = m+'<span>￥ '+json[i].totalFee/json[i].cardNum +'</span>';
 												m = m+'<strong>×'+json[i].cardNum+'</strong>';
@@ -348,7 +348,7 @@ var shareParams={
 							m = m+'<a href="'+pathnuoche+'/ordercenter.do?method=showorder&openId='+json[i].weixinUser.openid+'&orderid='+json[i].orderId+'" class="paymentB">';
 								m = m+'<img src="'+pathnuoche+'/weixin/images/main_20.jpg">';
 								m = m+'<div class="paymentBT">';
-									m = m+'<div class="paymentBTa">卡卡挪车二维码车贴，保护亿万车主隐私</div>';
+									m = m+'<div class="paymentBTa">115挪车二维码车贴，保护亿万车主隐私</div>';
 										m = m+'<div class="paymentBTb">';
 												m = m+'<span>￥ '+json[i].totalFee/json[i].cardNum +'</span>';
 												m = m+'<strong>×'+json[i].cardNum+'</strong>';
@@ -394,7 +394,7 @@ var shareParams={
 							m = m+'<a href="'+pathnuoche+'/ordercenter.do?method=showorder&openId='+json[i].weixinUser.openid+'&orderid='+json[i].orderId+'" class="paymentB">';
 								m = m+'<img src="'+pathnuoche+'/weixin/images/main_20.jpg">';
 								m = m+'<div class="paymentBT">';
-									m = m+'<div class="paymentBTa">卡卡挪车二维码车贴，保护亿万车主隐私</div>';
+									m = m+'<div class="paymentBTa">115挪车二维码车贴，保护亿万车主隐私</div>';
 										m = m+'<div class="paymentBTb">';
 												m = m+'<span>￥ '+json[i].totalFee/json[i].cardNum +'</span>';
 												m = m+'<strong>×'+json[i].cardNum+'</strong>';

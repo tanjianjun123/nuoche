@@ -43,7 +43,7 @@ public class DailiUpdateTelAction {
 			return "false";
 		}
 		String code=SmsUtil.createCode(4);
-		String content="您的验证码为:"+code+"。此验证码用于卡卡挪车登录或修改手机号码。10分钟内有效。";
+		String content="您的验证码为:"+code+"。此验证码用于115挪车登录或修改手机号码。10分钟内有效。";
 		//  保存验证码到  验证码表
 		dailismsservice.saveCode(code, dl_tel);
 		//request.getSession().setAttribute("code", code);

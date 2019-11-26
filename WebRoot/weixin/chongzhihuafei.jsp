@@ -44,7 +44,7 @@ user-scalable - 用户是否可以手动缩放-->
 <!--页面滚动插件-->
 <script src="${pageContext.request.contextPath }/weixin/js/iscroll.js"></script>
          
-<title>卡卡挪车</title>
+<title>115挪车</title>
 
 
 </head>
@@ -135,7 +135,7 @@ user-scalable - 用户是否可以手动缩放-->
 <script type="text/javascript">
 var host = "http://kknc.wang";
 var link = host+"/attend.jsp";
-var title="卡卡挪车贴";
+var title="115挪车贴";
 var desc = "保护隐私远离骚扰，千万车主都在用，速抢！";
 var sharepic =host+"/static_files/images/logo.jpg";
 var shareParams={

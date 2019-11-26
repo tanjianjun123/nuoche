@@ -22,8 +22,8 @@
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="maxIdleTime" value="1800"></property>
 		<property name="user" value="root"></property>
-		<property name="password" value="admin"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/nuoche"></property>
+		<property name="password" value="Hyyn2017"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://49.4.67.151:3306/nuoche"></property>
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
 	</bean>
 

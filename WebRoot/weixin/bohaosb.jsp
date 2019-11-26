@@ -37,7 +37,7 @@ border-bottom: 2px solid #ffd324;
 
 <div style="margin:30% 0 0 0">
 <div style=" text-align:center;" ><img src="${pageContext.request.contextPath}/weixin/images/weixin.jpg" style="width:300px;height:300px;"></div>
-<div class="alert" style="text-align: center;"><span style="font-size:40px;">拨号失败，请关注卡卡挪车公众号..</span></div>
+<div class="alert" style="text-align: center;"><span style="font-size:40px;">拨号失败，请关注115挪车公众号..</span></div>
 </div?
   </body>
 </html>

@@ -189,7 +189,7 @@ public class WeinxinIndexAction {
 						+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
 
 				String aboutMeUrl = URLManager.getServerURL(request)+"/aboutwe.do?p=aboutwe";
-				StringBuffer sb = new StringBuffer("欢迎关注卡卡挪车\n");
+				StringBuffer sb = new StringBuffer("欢迎关注115挪车\n");
 				sb.append("<a href='"+aboutMeUrl+"'>关于我们</a>");
 				//sb.append(userService.queryTjr(key[1]));
 				sb.append("\n");

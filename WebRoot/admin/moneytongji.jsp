@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="pd-20" style="padding-top:20px;">
-  <p class="f-20 text-success">欢迎使用卡卡挪车 <span class="f-14">v1.0</span>后台管理！</p>
+  <p class="f-20 text-success">欢迎使用115挪车 <span class="f-14">v1.0</span>后台管理！</p>
   <table class="table table-border table-bordered table-bg">
     <thead>
       <tr>

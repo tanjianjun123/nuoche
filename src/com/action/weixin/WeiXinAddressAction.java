@@ -42,10 +42,14 @@ public class WeiXinAddressAction {
 	@ResponseBody
 	public String findByIdArea(HttpServletRequest request,HttpServletResponse response) throws IOException
 	{
-		
-		int crid =Integer.parseInt(request.getParameter("crid"));
-		String json=addressService.findByIdArea(crid);
-		return json;
+		String crid1 = request.getParameter("crid");
+		if(crid1==null||"".equals(crid1)){
+			return null;
+		}else{
+			int crid =Integer.parseInt(request.getParameter("crid"));
+			String json=addressService.findByIdArea(crid);
+			return json;
+		}
 	}
 
 }
