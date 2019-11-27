@@ -1,7 +1,9 @@
 package com.util;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -134,6 +136,26 @@ public class T2DMa {
 			} else {
 				throw new Exception("QRCode content bytes length = " + contentBytes.length + " not in [0, 800].");
 			}
+			String logoPath = T2DMa.class.getResource("/logo.png").getPath(); 
+			 // 构建绘图对象
+            Graphics2D g = bufImg.createGraphics();
+            // 读取Logo图片
+            BufferedImage logo = ImageIO.read(new File(logoPath));
+            //设置logo的位置
+            LogoConfig logoConfig = new LogoConfig();
+            int widthLogo = bufImg.getWidth() / logoConfig.getLogoPart();
+            int heightLogo = bufImg.getWidth() / logoConfig.getLogoPart(); // 保持二维码是正方形的
+            // 计算图片放置位置（居中）
+            int x = (bufImg.getWidth() - widthLogo) / 2;
+            int y = (bufImg.getHeight() - heightLogo) / 2;
+ 
+            // 开始绘制图片
+            g.drawImage(logo, x, y, widthLogo, heightLogo, null);
+            g.drawRoundRect(x, y, widthLogo, heightLogo, 10, 10);
+            g.setStroke(new BasicStroke(logoConfig.getBorder()));
+            g.setColor(logoConfig.getBorderColor());
+            g.drawRect(x, y, widthLogo, heightLogo);
+
 			gs.dispose();
 			bufImg.flush();
 		} catch (Exception e) {

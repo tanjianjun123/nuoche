@@ -2,6 +2,7 @@ package com.action.weixin;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -408,23 +409,24 @@ public class WeiXinMoveCarAction {
 		String tel = request.getParameter("tel");
 		String chepai = request.getParameter("cpqz").trim()
 				+ request.getParameter("chepai").trim();
-		chepai = new String(chepai.getBytes("iso8859-1"), "utf-8");
+//		chepai = new String(chepai.getBytes("iso8859-1"), "utf-8");
+		chepai=URLDecoder.decode(chepai,"UTF-8");
 		String wz = request.getParameter("weizhin");
 
 		templateMessage.setUrl(jyz_url);
 		templateMessage.setTopcolor("#173177");
 		templateMessage.setTouser(wxh); // 接收者
 		templateMessage
-				.setTemplate_id("f5inTP7ZvB0r1W7qynF3Li3zAWJOF3DrvG_UeCHh-h0");
+				.setTemplate_id("62fcsmwn05jVckuEG06aKL4MSzPUKeFQKt6kxh-4ZR8");
 
 		// TemplateMessageItem item = new TemplateMessageItem(value, color)
 
 		LinkedHashMap linkedHashMap = new LinkedHashMap();
-		linkedHashMap.put("first", new TemplateMessageItem("尊敬的车主您好，您有新的挪车请求。",
+		linkedHashMap.put("first", new TemplateMessageItem("尊敬的115挪车用户您好，您收到一条新的挪车请求，请尽快处理，感谢您的支持！",
 				"#173177"));
-		linkedHashMap.put("remark", new TemplateMessageItem((StringUtil
+		linkedHashMap.put("remark", new TemplateMessageItem("您的爱车"+(StringUtil
 				.isNotNull(wz) ? "位于" : "")
-				+ wz + "请您及时前去处理", "#173177"));
+				+ wz + "影响了我的正常行驶，请您尽快前来处理，谢谢", "#173177"));
 		Date date = new Date();
 		SimpleDateFormat spd = new SimpleDateFormat("yyyy年MM月dd日  HH:mm");
 		String t = spd.format(date);

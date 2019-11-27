@@ -127,12 +127,12 @@ user-scalable - 用户是否可以手动缩放-->
 		
 
 	</ul>
-	<div>
+	<%-- <div>
 		<c:if test="${sessionScope.gz == 1}">
 		       长按二维码关注，享受更多优惠 <br/>
 		   <img src="${pageContext.request.contextPath}/weixin/images/weixin.jpg" style="width:180px;height:180px;" />
 		</c:if>
-	</div>
+	</div> --%>
 </div>
 
 
@@ -204,7 +204,8 @@ function showtime(t){
 	document.myform.phone.disabled=true;
 	
 	var weizhin = document.getElementById("weixin1").value;
-		var url="${pageContext.request.contextPath}/move.do?p=dxtongzhi&wxh=${user.weixinUser.openid }&tel=${user.tel}&chepai=${user.plateNumber}&cpqz=${user.chepaiqianzhui}&user_wx=${user_wx}";
+	var cpqz=encodeURI(encodeURI("${user.chepaiqianzhui}"));
+		var url="${pageContext.request.contextPath}/move.do?p=dxtongzhi&wxh=${user.weixinUser.openid }&tel=${user.tel}&chepai=${user.plateNumber}&cpqz="+cpqz+"&user_wx=${user_wx}";
 		var param={weizhin:weizhin};
 		$.post(url,param,function(data){
 		var json=eval("("+data+")");
@@ -326,7 +327,7 @@ function showtime4(){
 </script>
 
 <script src="http://map.qq.com/api/js?v=2.exp"></script>
-
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script>
     
 	wx.config( {
@@ -335,30 +336,31 @@ function showtime4(){
 		timestamp : parseInt("${timestamp}", 10), // 必填，生成签名的时间戳
 		nonceStr : '${nonceStr}', // 必填，生成签名的随机串
 		signature : '${signature }',// 必填，签名，见附录1
-		jsApiList : [ 'getLocation' ]
+		jsApiList: ['checkJsApi','getLocation']
 	// 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 			});
 	
 	wx.ready(function() {
 	var weizhi = document.getElementById('weixin1');
 			wx.getLocation( {
-
+							type: 'wgs84',
 							success : function(res) {
 							
-							
-							latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
-					        longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+							var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+					        var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
 					        var speed = res.speed; // 速度，以米/每秒计
 					        var accuracy = res.accuracy; // 位置精度
+					        console.log(1111);
 					        let geocoder = new qq.maps.Geocoder({
 					           complete: function (result) {
-					              //weizhi.value = result.detail.address;
-					              province = result.detail.addressComponents.province;//获取省份  
-						          city = result.detail.addressComponents.city;//获取城市  
-						          address = result.detail.addressComponents.district;//区
-						          street  = result.detail.addressComponents.street; //街
-						          streetNum = result.detail.addressComponents.streetNumber;//号
-					              weizhi.value = province+city+address+street+streetNum+"附近";
+					        	   console.log(1112);
+					             weizhi.value = result.detail.address;
+					             var province = result.detail.addressComponents.province;//获取省份  
+						         var city = result.detail.addressComponents.city;//获取城市  
+						         var address = result.detail.addressComponents.district;//区
+						         var  street  = result.detail.addressComponents.street; //街
+						         var streetNum = result.detail.addressComponents.streetNumber;//号
+						         // weizhi.value = province+city+address+street+streetNum+"附近";
 					            }
 					        })
 					       var coord = new qq.maps.LatLng(res.latitude, res.longitude);
@@ -392,6 +394,9 @@ function showtime4(){
                     	
                     	
 						},
+						cancel: function (res) {
+						      console.log('用户拒绝授权获取地理位置');
+						},
 						fail : function(error) {
 							AlertUtil.error("获取地理位置失败，请确保开启GPS且允许微信获取您的地理位置！");
 						}
@@ -399,6 +404,7 @@ function showtime4(){
 			});
 
 	wx.error(function(res) {
+		 console.log('error:'+error);
 	});
 </script>
 
