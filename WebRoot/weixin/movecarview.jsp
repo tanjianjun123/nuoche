@@ -83,7 +83,7 @@ user-scalable - 用户是否可以手动缩放-->
 				车主姓名：${fn:substring(user.name,0,1) }先生/女士 <br />
 			</div>
 			<div class="pay_txt" style="color: #999;">
-				所在位置：<input style="border: 0px;width: 70%;font-size: 15px;color: #c1c1c1;" type="text" placeholder="正在定位当前城市..."  id="weixin1" name="weizhin" value="">
+				所在位置：<input style="border: 0px;width: 70%;font-size: 15px;color: #c1c1c1;" type="text" placeholder="正在获取当前位置（可手动输入）..."  id="weixin1" name="weizhin" value="">
 			</div>
 			
 			<div class="pay_txt" id="tz" style="color: #999;display: block;">
@@ -100,13 +100,13 @@ user-scalable - 用户是否可以手动缩放-->
 			
 		</li>
 		
-		<li class="butB" name="li1">
+	<!-- 	<li class="butB" name="li1">
 			
 			<form action="" method="post" name="myform3">
 				<input type="button" class="button" value="平台通知"  id="phone_btn" name="phone3" onclick="showtime2(90)">
 			</form>
 			
-		</li>
+		</li> -->
 		
 		<li class="butB" name="li1">
 			
@@ -326,7 +326,7 @@ function showtime4(){
 
 </script>
 
-<script src="http://map.qq.com/api/js?v=2.exp"></script>
+<script src="http://map.qq.com/api/js?v=2.exp&key=AC4BZ-KCRKR-SESWC-W6ESQ-VBFW5-BOBMA"></script>
 <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script>
     
@@ -350,17 +350,17 @@ function showtime4(){
 					        var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
 					        var speed = res.speed; // 速度，以米/每秒计
 					        var accuracy = res.accuracy; // 位置精度
-					        console.log(1111);
+					        //console.log(1111);
 					        let geocoder = new qq.maps.Geocoder({
 					           complete: function (result) {
-					        	   console.log(1112);
-					             weizhi.value = result.detail.address;
+					        	  //console.log(1112);
+					             //weizhi.value = result.detail.address;
 					             var province = result.detail.addressComponents.province;//获取省份  
 						         var city = result.detail.addressComponents.city;//获取城市  
 						         var address = result.detail.addressComponents.district;//区
 						         var  street  = result.detail.addressComponents.street; //街
 						         var streetNum = result.detail.addressComponents.streetNumber;//号
-						         // weizhi.value = province+city+address+street+streetNum+"附近";
+						         weizhi.value = province+city+address+street+streetNum+"附近";
 					            }
 					        })
 					       var coord = new qq.maps.LatLng(res.latitude, res.longitude);

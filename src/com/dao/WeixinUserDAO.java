@@ -56,10 +56,10 @@ public class WeixinUserDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public WeixinUser findById(java.lang.String id) {
-		log.debug("getting WeixinUser instance with id: " + id);
+	public WeixinUser findById(java.lang.String openid) {
+		log.debug("getting WeixinUser instance with id: " + openid);
 		try {
-			WeixinUser instance = (WeixinUser) getHibernateTemplate().get("com.pojo.WeixinUser", id);
+			WeixinUser instance = (WeixinUser) getHibernateTemplate().get("com.pojo.WeixinUser", openid);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);

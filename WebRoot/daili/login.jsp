@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    </div>
    <div class="login_bottom">
         
-        <span class="login_gongsixinxi">深圳光华软件有限公司提供技术支持</span>
+        <span class="login_gongsixinxi">安徽华初网络科技有限公司提供技术支持</span>
         
    </div> 
 </body>

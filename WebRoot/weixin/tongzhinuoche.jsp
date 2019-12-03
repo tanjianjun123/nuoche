@@ -38,6 +38,6 @@ border-bottom: 2px solid #ffd324;
 <div style="margin:30% 0 0 0">
 <div style=" text-align:center;" ><img src="${pageContext.request.contextPath }/weixin/images/jinggao.png" style="width:300px;height:300px;"></div>
 <div class="alert"><span style="font-size:40px;">您的爱车影响他人正常行驶，请尽快赶回驻车处挪车！</span></div>
-</div?
-  </body>
+</div>
+</body>
 </html>

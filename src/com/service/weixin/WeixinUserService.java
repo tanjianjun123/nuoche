@@ -137,12 +137,20 @@ public class WeixinUserService {
 	public WeixinUser findbyOpenId(String openid) {
 		// TODO Auto-generated method stub
 		try {
-			return weixinUserDAO.findById(openid);
+			String hql = "from WeixinUser where openid=?";
+			List<WeixinUser> list  =hqlDAO.pageQuery(hql, 1,1, openid);
+			WeixinUser weixinuser = null;
+			if (list.size()>0)
+			{
+				//得到当前用户
+				weixinuser = list.get(0);
+			};
+			return weixinuser;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
-		return null;
 	}
 
 	/**

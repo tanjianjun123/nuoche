@@ -65,14 +65,14 @@
 			<div class="main_lianjie">
 				<div>
 				  <br/>
-				  
+			<%-- 	  
 				  <img width="150px" height="150px" src="${pageContext.request.contextPath}/images/weixin.jpg"/>
 				</div>
-				<div>微信扫一扫关注我们</div>
+				<div>微信扫一扫关注我们</div> --%>
 				
 				<br/><br/>
 				<div>
-				        深圳光华软件科技有限公司 粤ICP备18033371
+				        安徽华初网络科技有限公司
 				  </div>
 			</div>
 		</div>
