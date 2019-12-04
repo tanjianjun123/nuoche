@@ -40,7 +40,7 @@ if (gtname!=null)
 	<body>
 		<header class="mui-bar mui-bar-nav" style="background: #FF7900;">
 			<span class="mui-icon mui-icon-arrowleft mui-action-back" style="color: white;"></span>
-			<span  class="mui-btn-link" style="color: white;">卡卡分类</span>
+			<span  class="mui-btn-link" style="color: white;">115分类</span>
 		</header>
 		
 			

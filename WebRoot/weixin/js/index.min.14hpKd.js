@@ -2981,7 +2981,7 @@
 			return t ? /(^\d{17}(\d|X)$)|(^\d{15}$)/gi.test(t) ? /^\d{17}(\d|X)$/gi.test(t) && !n(t) ? "身份证号输入错误" : "" : "身份证为15或18位数字,末位可以为x" : ""
 		},
 		isBankCard: function(t) {
-			return t = t.replace(/\s/g, ""), t && !/^\d{12,19}$/.test(t) ? "银行卡卡号为12-19位数字" : t && !i(t) ? "银行卡卡号错误" : ""
+			return t = t.replace(/\s/g, ""), t && !/^\d{12,19}$/.test(t) ? "银行115号为12-19位数字" : t && !i(t) ? "银行115号错误" : ""
 		},
 		isExpire: function(t) {
 			var e = /^\d{4}$|^\d{2}\/\d{2}$/g.test(t),

@@ -255,76 +255,64 @@ public class WeinxinIndexAction {
 		// -------------菜单2选项--------------
 		Button btnTwo = new Button();// 第二个按钮
 		btnTwo.setType("click");
-		btnTwo.setName("车友");
+		btnTwo.setName("申请挪车码");
 		btnTwo.setKey("MENU_TWO");
 		
 		// 2.1
-		Button btnTwo1 = new Button();
-		btnTwo1.setType("view");
-		btnTwo1.setName("9折预约");
+//		Button btnTwo1 = new Button();
+//		btnTwo1.setType("view");
+//		btnTwo1.setName("9折预约");
+//		
+//		String btnTwo1_url = URLManager.getServerURL(request)
+//				+ "/weixinCheyou.do?p=yuyue";
+//		String newUrl_btnTwo1 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+//				+ WeixinConfig.APPID
+//				+ "&redirect_uri="
+//				+ URLEncoder.encode(btnTwo1_url, "utf-8")
+//				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+//		btnTwo1.setUrl(newUrl_btnTwo1);// 两个不同的浏览器 session不一样 .do有缓存
 		
-		String btnTwo1_url = URLManager.getServerURL(request)
-				+ "/weixinCheyou.do?p=yuyue";
-		String newUrl_btnTwo1 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
-				+ WeixinConfig.APPID
-				+ "&redirect_uri="
-				+ URLEncoder.encode(btnTwo1_url, "utf-8")
-				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-		btnTwo1.setUrl(newUrl_btnTwo1);// 两个不同的浏览器 session不一样 .do有缓存
-		
-		Button btnTwo2 = new Button();
-		btnTwo2.setType("view");
-		btnTwo2.setName("88折加油");
-		String btnTwo2_url = URLManager.getServerURL(request)
-				+ "/weixinCheyou.do?p=jiaoyou";
-		String newUrl_btnTwo2 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
-				+ WeixinConfig.APPID
-				+ "&redirect_uri="
-				+ URLEncoder.encode(btnTwo2_url, "utf-8")
-				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-		btnTwo2.setUrl(newUrl_btnTwo2);// 两个不同的浏览器 session不一样 .do有缓存
+//		Button btnTwo2 = new Button();
+//		btnTwo2.setType("view");
+//		btnTwo2.setName("88折加油");
+//		String btnTwo2_url = URLManager.getServerURL(request)
+//				+ "/weixinCheyou.do?p=jiaoyou";
+//		String newUrl_btnTwo2 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+//				+ WeixinConfig.APPID
+//				+ "&redirect_uri="
+//				+ URLEncoder.encode(btnTwo2_url, "utf-8")
+//				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+//		btnTwo2.setUrl(newUrl_btnTwo2);// 两个不同的浏览器 session不一样 .do有缓存
 	
-		Button btnTwo3 = new Button();
-		btnTwo3.setType("view");
-		btnTwo3.setName("7折商城");
-		String btnTwo3_url = URLManager.getServerURL(request)
-				+ "/weixinCheyou.do?p=shop";
-		String newUrl_btnTwo3 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
-				+ WeixinConfig.APPID
-				+ "&redirect_uri="
-				+ URLEncoder.encode(btnTwo3_url, "utf-8")
-				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-		btnTwo3.setUrl(newUrl_btnTwo3);// 两个不同的浏览器 session不一样 .do有缓存
+//		Button btnTwo3 = new Button();
+//		btnTwo3.setType("view");
+//		btnTwo3.setName("7折商城");
+//		String btnTwo3_url = URLManager.getServerURL(request)
+//				+ "/weixinCheyou.do?p=shop";
+//		String newUrl_btnTwo3 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+//				+ WeixinConfig.APPID
+//				+ "&redirect_uri="
+//				+ URLEncoder.encode(btnTwo3_url, "utf-8")
+//				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+//		btnTwo3.setUrl(newUrl_btnTwo3);// 两个不同的浏览器 session不一样 .do有缓存
 	
 		
-		Button btnTwo4 = new Button();
-		btnTwo4.setType("view");
-		btnTwo4.setName("6折车险");
-		String btnTwo4_url = URLManager.getServerURL(request)
-				+ "/weixinCheyou.do?p=chexian";
-		String newUrl_btnTwo4 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
-				+ WeixinConfig.APPID
-				+ "&redirect_uri="
-				+ URLEncoder.encode(btnTwo4_url, "utf-8")
-				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-		btnTwo4.setUrl(newUrl_btnTwo4);// 两个不同的浏览器 session不一样 .do有缓存
+//		Button btnTwo4 = new Button();
+//		btnTwo4.setType("view");
+//		btnTwo4.setName("6折车险");
+//		String btnTwo4_url = URLManager.getServerURL(request)
+//				+ "/weixinCheyou.do?p=chexian";
+//		String newUrl_btnTwo4 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+//				+ WeixinConfig.APPID
+//				+ "&redirect_uri="
+//				+ URLEncoder.encode(btnTwo4_url, "utf-8")
+//				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+//		btnTwo4.setUrl(newUrl_btnTwo4);// 两个不同的浏览器 session不一样 .do有缓存
 	
-		List<Button> list2 = new ArrayList<Button>();
-		list2.add(btnTwo1);
-		list2.add(btnTwo2);
-		list2.add(btnTwo3);
-		list2.add(btnTwo4);
 		
-		btnTwo.setSub_button(list2);
-		//-------------------------菜单3选项----------------
-		Button btnThree = new Button();// 第三个按钮
-		btnThree.setType("click");
-		btnThree.setName("我");
-		btnThree.setKey("MENU_THREE");
-
 		// 3.1 申请二维码
 		Button btnThree1 = new Button();
-		btnThree1.setName("申请二维码");
+		btnThree1.setName("申请挪车码");
 		btnThree1.setType("view");
 		String url3_1 = URLManager.getServerURL(request)
 				+ "/applyforqrcode.do?method=applyforqrcodeindex";
@@ -347,7 +335,26 @@ public class WeinxinIndexAction {
 				+ URLEncoder.encode(url3_2, "utf-8")
 				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
 		btnThree2.setUrl(newUrl3_2);
+		
+		
+		
+		
+		
+		List<Button> list2 = new ArrayList<Button>();
+//		list2.add(btnTwo1);
+		list2.add(btnThree1);
+		list2.add(btnThree2);
+//		list2.add(btnTwo3);
+//		list2.add(btnTwo4);
+		
+		btnTwo.setSub_button(list2);
+		//-------------------------菜单3选项----------------
+		Button btnThree = new Button();// 第三个按钮
+		btnThree.setType("click");
+		btnThree.setName("我的");
+		btnThree.setKey("MENU_THREE");
 
+	
 		//3.3 个人中心
 		Button btnThree3 = new Button();
 		btnThree3.setName("个人中心");
@@ -361,22 +368,22 @@ public class WeinxinIndexAction {
 				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
 		btnThree3.setUrl(newUrl3_3);
 		
-		Button btnThree4 = new Button();
-		btnThree4.setName("免费电话");
-		btnThree4.setType("view");
-		String url3_4 = URLManager.getServerURL(request)
-				+ "/move.do?p=dhtongzhi";
-		String newUrl3_4 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
-				+ WeixinConfig.APPID
-				+ "&redirect_uri="
-				+ URLEncoder.encode(url3_4, "utf-8")
-				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-		btnThree4.setUrl(newUrl3_4);
+//		Button btnThree4 = new Button();
+//		btnThree4.setName("免费电话");
+//		btnThree4.setType("view");
+//		String url3_4 = URLManager.getServerURL(request)
+//				+ "/move.do?p=dhtongzhi";
+//		String newUrl3_4 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+//				+ WeixinConfig.APPID
+//				+ "&redirect_uri="
+//				+ URLEncoder.encode(url3_4, "utf-8")
+//				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+//		btnThree4.setUrl(newUrl3_4);
 		
 		List<Button> list3 = new ArrayList<Button>();
-		list3.add(btnThree1);//  申请二维码
-		list3.add(btnThree2); // 绑定车牌
-		list3.add(btnThree4); // 免费电话
+//		list3.add(btnThree1);//  申请二维码
+//		list3.add(btnThree2); // 绑定车牌
+//		list3.add(btnThree4); // 免费电话
 		list3.add(btnThree3); // 个人中心
 		btnThree.setSub_button(list3);
 		

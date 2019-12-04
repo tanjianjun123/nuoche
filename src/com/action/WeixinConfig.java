@@ -19,8 +19,8 @@ public class WeixinConfig {
 	public static String TOKEN = "nuoche";//"a1314520";
 
     
-	public  static  String APPID = "wxcfff0a7c8f0f9e7e";//"wx225617f3db0beec0";
-	public  static  String APPSECRET = "026c01440f006ed61bb1faec0cf1210a";//"189b9553df89662f10d0568d5019396f";
+	public  static  String APPID = "wx10e662480383a840";//"wx225617f3db0beec0";
+	public  static  String APPSECRET = "959c2a190cd6d892f328d7684e4227f2";//"189b9553df89662f10d0568d5019396f";
 	public  static  String MCH_ID = null; //商户号
 	public  static  String PAY_KEY = null;
 	public  static  String zhanghao = null;

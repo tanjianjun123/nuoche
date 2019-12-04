@@ -29,7 +29,7 @@ request.getSession().setAttribute("page", 0);
 
 		<header class="mui-bar mui-bar-nav" style="background: #ff7900;">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: white;"></a>
-			<span class="mui-title" style="color: white;">卡卡商城</span>
+			<span class="mui-title" style="color: white;">115商城</span>
 		</header>
 
 		<div class="mui-content">

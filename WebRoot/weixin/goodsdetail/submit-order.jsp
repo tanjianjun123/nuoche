@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<span class="in-order-fee in-bottom-line">¥<span id="submit_zongjia">0.00</span></span>
 								</div>
 								<h4 class="cell-ellipsis">
-									<span class="in-order-title in-bottom-line">卡卡商城</span>
+									<span class="in-order-title in-bottom-line">115商城</span>
 								</h4>
 							</div>
 						</div>
@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<img src="${pageContext.request.contextPath}/weixin/images/jiangjin.png" alt="银行卡支付">
 								</div>
 								<div class="cell-left">
-									<div class="in-pay-title cell-ellipsis">卡卡积分支付 </div>
+									<div class="in-pay-title cell-ellipsis">115积分支付 </div>
 									<div class="in-pay-info cell-ellipsis">
 										<span class="in-amount-info">可用积分 ¥<span id="confirm_yue">0</span></span>
 									</div>

@@ -162,7 +162,7 @@ user-scalable - 用户是否可以手动缩放-->
 <script type="text/javascript">
 var host = "http://kknc.wang";
 var link = host+"/attend.jsp";
-var title="卡卡扫码隐号挪车贴";
+var title="115扫码隐号挪车贴";
 var desc = "保护隐私远离骚扰，千万车主都在用，速抢！";
 var sharepic =host+"/static_files/images/logo.jpg";
 var shareParams={

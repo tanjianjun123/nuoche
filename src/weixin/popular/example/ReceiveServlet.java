@@ -30,7 +30,7 @@ public class ReceiveServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	//从官方获取
-	private String token = "test";
+	private String token = "nuoche";
 
     //重复通知过滤  时效60秒
     private static ExpireSet<String> expireSet = new ExpireSet<String>(60);

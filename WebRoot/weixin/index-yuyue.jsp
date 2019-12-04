@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<!--标准mui.css-->
-		<title>卡卡预约商场</title>
+		<title>115预约商场</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/weixin/css/mui.min.css">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">

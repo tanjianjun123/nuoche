@@ -65,7 +65,7 @@ public class DailiUserInfoAction {
 		String parenproxyname = "";
 		if(proxy.getParentId()==0)
 		{
-			parenproxyname ="卡卡管理员";
+			parenproxyname ="115管理员";
 		}else{
 			// 查询上一级代理
 			Proxy parenproxy = dailiuserinfoservice.FindUserInfoByid(proxy.getParentId());
