@@ -1,6 +1,7 @@
 package weixin.popular.util;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,7 +42,7 @@ public class JSSDKUtil {
 		String oneString = SignatureUtil.create_nonce_str().replaceAll("-", "");
 		Unifiedorder unifiedorder = new Unifiedorder();
 		unifiedorder.setAppid(appid);
-		unifiedorder.setBody("支付");// 商品描述
+		unifiedorder.setBody("115挪车码订单支付");// 商品描述
 		unifiedorder.setDevice_info("");
 		unifiedorder.setGoods_tag("");
 		unifiedorder.setMch_id(mch_id);
@@ -52,7 +53,10 @@ public class JSSDKUtil {
 		unifiedorder.setTime_expire(timeExpire);
 		unifiedorder.setTime_start(timeStart);
 		unifiedorder.setSpbill_create_ip(ip);// 客户端ip
-		String money2 = Float.parseFloat(money) * 100 + "";
+		BigDecimal b = new BigDecimal(money);//必须使用字符串,不能使用浮点型数据
+		BigDecimal aa = b.multiply(new BigDecimal(100));
+		String money2 = aa+ "";
+		System.out.println("价格："+money2);
 		int index = money2.indexOf(".");
 		if (index > -1)
 			money2 = money2.substring(0, index);

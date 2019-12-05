@@ -143,7 +143,7 @@ public class WeinxinIndexAction {
 					addMenu(request);
 				}
 				com.weixin.pojo.TextMessage textMessage = new com.weixin.pojo.TextMessage();
-				textMessage.setContent("我是机器人Robert，感谢您的回复，我会把您的信息转告给主人。");
+				textMessage.setContent("我是115挪车管家，很高心为您服务，我会把您的信息转告给主人。");
 				textMessage.setCreateTime(new Date().getTime());
 				textMessage.setFromUserName(eventMessage.getToUserName());
 				textMessage.setMsgType("text");
@@ -250,6 +250,7 @@ public class WeinxinIndexAction {
 		btnOne.setKey("MENU_ONE");
 		String url = URLManager.getServerURL(request)
 				+ "/move.do?p=moveCar2";
+		System.out.print(url);
 		btnOne.setUrl(url);
 		
 		// -------------菜单2选项--------------
