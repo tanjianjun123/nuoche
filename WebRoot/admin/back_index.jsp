@@ -53,7 +53,7 @@
 		<link href="${pageContext.request.contextPath }/lib/css/style.css"
 			rel="stylesheet" type="text/css" />
 
-		<title>115挪车-超级管理员后台</title>
+		<title>115挪车-管理后台</title>
 		<meta name="keywords"
 			content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 		<meta name="description"
@@ -64,9 +64,9 @@
 	<c:redirect url="/admin/login.jsp"></c:redirect>
 </c:if>
 		<header class="Hui-header cl">
-		<a class="Hui-logo l" title="超级管理员后台" href="/">超级管理员后台</a>
+		<a class="Hui-logo l" title="超级管理员后台" href="/">115挪车管理后台</a>
 		<a class="Hui-logo-m l" href="/" title="H-ui.admin">H-uihit</a>
-		<span class="Hui-subtitle l">V1.0</span>
+	<!-- 	<span class="Hui-subtitle l">V1.0</span> -->
 		<nav class="mainnav cl" id="Hui-nav">
 		</nav>
 		<ul class="Hui-userbar">
@@ -90,7 +90,7 @@
 					</li>
 				</ul>
 			</li>
-			<li id="Hui-msg">
+			<%-- <li id="Hui-msg">
 				<a onclick="showMessage(this)" target="iframe_box"
 					_href="${pageContext.request.contextPath }/uamessages.do?p=messageslisting"
 					title="消息"><span id="msgsum" class="badge badge-danger"></span><i
@@ -119,7 +119,7 @@
 						<a href="javascript:;" data-val="orange" title="绿色">橙色</a>
 					</li>
 				</ul>
-			</li>
+			</li> --%>
 		</ul>
 		<a href="javascript:;" class="Hui-nav-toggle Hui-iconfont"
 			aria-hidden="false">&#xe667;</a>
@@ -141,7 +141,7 @@
 							<a
 								_href="${pageContext.request.contextPath}/admin_jccs.do?p=jccs&type=2"
 								data-title="二维码销售价格">二维码销售价格</a>
-							<a
+							<%-- <a
 								_href="${pageContext.request.contextPath}/admin_jccs.do?p=jccs&type=3"
 								data-title="会员预约价格">会员预约价格</a>
 							<a
@@ -158,7 +158,7 @@
 								data-title="会员续费赠送分钟数">会员续费赠送分钟数</a>
 							<a
 								_href="${pageContext.request.contextPath}/admin_jccs.do?p=jccs&type=8"
-								data-title="免费电话充值单价设置">免费电话充值单价设置</a>
+								data-title="免费电话充值单价设置">免费电话充值单价设置</a> --%>
 						</li>
 					</ul>
 				</dd>
@@ -184,7 +184,7 @@
 				</dd>
 			</dl>
 			
-			<dl id="menu-picture">
+			<%-- <dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe62d;</i> 保险管理
 					<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -227,7 +227,7 @@
 						
 					</ul>
 				</dd>
-			</dl>
+			</dl> --%>
 			
 			<dl id="menu-picture">
 				<dt>
@@ -250,7 +250,7 @@
 				</dd>
 			</dl>
 			
-			<dl id="menu-picture">
+			<%-- <dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe62d;</i> 店铺管理
 					<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -264,7 +264,7 @@
 						</li>
 					</ul>
 				</dd>
-			</dl>
+			</dl> --%>
 			
 			<dl id="menu-picture">
 				<dt>
@@ -312,7 +312,7 @@
 				</dd>
 			</dl>
 			
-			<dl id="menu-product">
+			<%-- <dl id="menu-product">
 				<dt>
 					<i class="Hui-iconfont">&#xe62d;</i> 歌曲管理
 					<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -420,7 +420,7 @@
 						</li>
 					</ul>
 				</dd>
-			</dl>
+			</dl> --%>
 			
 			<dl id="menu-picture">
 				<dt>
@@ -444,7 +444,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="menu-picture">
+			<%-- <dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe63a;</i> 服务管理
 					<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -465,7 +465,7 @@
 						</li>
 					</ul>
 				</dd>
-			</dl>
+			</dl> --%>
 			<dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe6a9;</i> 订单管理
@@ -507,7 +507,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="menu-picture">
+			<%-- <dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe71d;</i> 充值管理
 					<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -551,7 +551,7 @@
 						</li>
 					</ul>
 				</dd>
-			</dl>
+			</dl> 
 			<dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe71f;</i> 支付管理
@@ -580,7 +580,7 @@
 						</li>
 					</ul>
 				</dd>
-			</dl>
+			</dl>--%>
 			
 			<dl id="menu-picture">
 				<dt>
@@ -601,7 +601,7 @@
 				</dd>
 			</dl>
 			
-			<dl id="menu-picture">
+			<%-- <dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe669;</i> 短信管理
 					<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -629,7 +629,7 @@
 						</li>
 					</ul>
 				</dd>
-			</dl>
+			</dl> --%>
 			<dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe62f;</i> 关于我们管理
@@ -669,7 +669,7 @@
 			<div class="show_iframe">
 				<div style="display: none" class="loading"></div>
 				<iframe scrolling="yes" frameborder="0"
-					src="${pageContext.request.contextPath}/admin_moneytongji.do?p=tongji"></iframe>
+					src="${pageContext.request.contextPath}/admin_order.do?p=orderslisting&status=10"></iframe>
 			</div>
 		</div>
 		</section>

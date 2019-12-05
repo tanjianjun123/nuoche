@@ -293,6 +293,15 @@ public class AdminErWeiMaAction {
 		List<Object[]> list = adminErWeiMaservice.getUserBetween(beginid, num);
 		String baseDir = request.getSession().getServletContext().getRealPath(
 				"/tmp");
+		File file = new File(baseDir);
+		if  (!file .exists()  && !file .isDirectory())      
+		{       
+			System.out.println("//不存在");  
+			file .mkdir();    
+		} else   
+		{  
+			System.out.println("//目录存在");  
+		}  
 		String filename = beginid + "-" + endid + ".xls";
 		System.out.println("filename:"+filename);
 		WritableWorkbook workbook = Workbook.createWorkbook(new File(baseDir,
