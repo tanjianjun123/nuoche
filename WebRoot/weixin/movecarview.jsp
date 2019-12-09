@@ -108,13 +108,13 @@ user-scalable - 用户是否可以手动缩放-->
 			
 		</li> -->
 		
-		<li class="butB" name="li1">
+		<!-- <li class="butB" name="li1">
 			
 			<form action="" method="post" name="myform4" id="myform4">
 				<input type="button" class="button" value="电话通知"  id="phone_btn" name="phone4" onclick="showtime4()">
 			</form>
 			
-		</li>
+		</li> -->
 		
 	
 		<%-- <li class="butB" name="li2">
