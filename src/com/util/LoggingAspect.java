@@ -27,16 +27,16 @@ public class LoggingAspect {
 
 	    public void beforeMethod(JoinPoint joinPoint) throws Throwable {
 	        // 接收到请求，记录请求内容
-//	        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-//	        HttpServletRequest request = attributes.getRequest();
+	        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+	        HttpServletRequest request = attributes.getRequest();
 
 	        // 记录下请求内容
-	        System.out.print(1111111);
-//	        logger.info("地址URL : " + request.getRequestURL().toString());
-//	        logger.info("方法HTTP_METHOD : " + request.getMethod());
-//	        logger.info("IP : " + request.getRemoteAddr());
-//	        logger.info("方法CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-//	        logger.info("参数ARGS : " + Arrays.toString(joinPoint.getArgs()));
+//	        System.out.print(1111111);
+	        logger.info("地址URL : " + request.getRequestURL().toString());
+	        logger.info("方法HTTP_METHOD : " + request.getMethod());
+	        logger.info("IP : " + request.getRemoteAddr());
+	        logger.info("方法CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+	        logger.info("参数ARGS : " + Arrays.toString(joinPoint.getArgs()));
 	    }
 	    
 	    public Object afterMethod(JoinPoint point) throws Throwable {

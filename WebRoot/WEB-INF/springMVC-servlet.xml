@@ -43,6 +43,7 @@
 			</list>
 		</property>
 	</bean>
+	
     
     <context:component-scan base-package="com.action"></context:component-scan>
     <context:component-scan base-package="com.action.wap"></context:component-scan>
@@ -55,6 +56,17 @@
     <context:component-scan base-package="com.shop.action.wap"></context:component-scan>
         
     
-	
-	
+    <!-- <aop:aspectj-autoproxy proxy-target-class="false"/>
+    <bean id="loggingAspect" class="com.util.LoggingAspect"></bean>
+	<aop:config>
+         <aop:pointcut expression="execution(* com.action.admin.*.*(..))" id="logPointcut"/>
+         <aop:aspect ref="loggingAspect" order="2">
+         	<aop:before method="beforeMethod" pointcut-ref="logPointcut"/>
+         	<aop:after method="afterMethod" pointcut-ref="logPointcut"/>
+         	<aop:after-returning method="afterReturning" pointcut-ref="logPointcut" returning="result"/>
+         	<aop:after-throwing method="afterThrowing" pointcut-ref="logPointcut" throwing="e"/>
+         </aop:aspect>
+    </aop:config> -->
+    
+    
 	</beans>
