@@ -20,6 +20,7 @@ import net.sf.json.JsonConfig;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.log4j.Logger;
 import org.apache.poi.util.PackageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -67,6 +68,8 @@ public class WeiXinMoveCarAction {
 	
 	@Autowired
 	private WeixinUserService  weixinUserService;
+	
+	private static Logger logger = Logger.getLogger(WeiXinMoveCarAction.class);
 
 	@RequestMapping(params = "p=moveCar")
 	public String moveCar(HttpServletRequest request,
@@ -417,7 +420,7 @@ public class WeiXinMoveCarAction {
 		templateMessage.setTopcolor("#173177");
 		templateMessage.setTouser(wxh); // 接收者
 		templateMessage
-				.setTemplate_id("62fcsmwn05jVckuEG06aKL4MSzPUKeFQKt6kxh-4ZR8");
+				.setTemplate_id("Jo2UiIKAxTORS2asl5wOj_N03pm7sFAKf-EbRDgk2Mk");
 
 		// TemplateMessageItem item = new TemplateMessageItem(value, color)
 
@@ -596,6 +599,7 @@ public class WeiXinMoveCarAction {
 	@RequestMapping(params = "p=xgjl")
 	public String XGJL() {
 		String wx = request.getParameter("wxh");
+		logger.info("获取微信号："+wx);
 		service.xiugaiStauts2(wx);
 		return "/weixin/tongzhinuoche.jsp";
 	}
