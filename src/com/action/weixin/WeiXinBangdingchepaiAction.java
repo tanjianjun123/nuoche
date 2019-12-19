@@ -52,6 +52,31 @@ public class WeiXinBangdingchepaiAction {
 		return "redirect:"+newUrl3_3;
 
 	}
+	@RequestMapping(params = "p=bangding_buy")
+	public String bangding_buy(HttpServletRequest request,HttpServletResponse response)throws IOException{
+		String qrid =(String)request.getSession().getAttribute("qrid");//request.getParameter("qrid");
+		String weixinhao =(String)request.getSession().getAttribute("uweixinhao");// request.getParameter("uweixinhao");
+		if (qrid==null || weixinhao==null)
+		{
+		    return "/weixin/bangdingshibai.jsp";
+		}
+		String chepaihao  = request.getParameter("chepaihao");
+		String name  = request.getParameter("name");
+		String tel  = request.getParameter("tel");
+		User user = weixinbangdingservice.bangding(qrid,chepaihao, name, tel,weixinhao);
+		//System.out.println("绑定成功");
+		
+		
+		String url3_3 = URLManager.getServerURL(request)
+				+ "/applyforqrcode.do?method=applyforqrcodeindex";
+		String newUrl3_3 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+				+ WeixinConfig.APPID
+				+ "&redirect_uri="
+				+ URLEncoder.encode(url3_3, "utf-8")
+				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+		return "redirect:"+newUrl3_3;
+
+	}
 	
 	
 }

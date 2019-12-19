@@ -337,7 +337,7 @@ public class WeiXinMoveCarAction {
 			}
 		}
 		if (n == 0) {
-			return "/weixin/bangdingshibai.jsp";
+			return "/weixin/bangdingchepai_buy.jsp";
 		}
 
 		if (n == 2) {
