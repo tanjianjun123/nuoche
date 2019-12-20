@@ -39,15 +39,19 @@ public class WeiXinBangdingService {
 		Short overdue = user.getOverdue();
 		if (overdue == 1) {
 			return 1;
-			// 该二维码未被绑定，可以绑定
+			// 该二维码未被绑定，可以绑定 这种是属于先支付后领取
 		}
 		if (overdue == 0) {
 			return 0;
-			// 该二维码未付款，无法绑定
+			// 该二维码初始状态不可以绑定
 		}
 		if (overdue == 2) {
 			return 2;
 			// 该二维码付款，绑定
+		}
+		if (overdue == 4) {
+			return 4;
+			// 该二维码被代理领取，但是还没有付款绑定
 		}
 		Date endTime = user.getOverdueTime();
 		if (overdue == 3 || endTime != null
@@ -87,7 +91,7 @@ public class WeiXinBangdingService {
 		WeixinUser wxuser = wxdao.findById(wx);
 		user.setWeixinUser(wxuser);
 		Calendar c = Calendar.getInstance();
-		c.add(Calendar.YEAR, 1);
+		c.add(Calendar.YEAR, 3);
 		user.setOverdueTime(new Timestamp(c.getTimeInMillis()));
 		userDAO.merge(user);
 		Proxy proxy = user.getProxy();

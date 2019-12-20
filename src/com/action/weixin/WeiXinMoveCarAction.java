@@ -336,7 +336,7 @@ public class WeiXinMoveCarAction {
 				return "/weixin/guanzhu.jsp";
 			}
 		}
-		if (n == 0) {
+		if (n == 4) {
 			return "/weixin/bangdingchepai_buy.jsp";
 		}
 

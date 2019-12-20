@@ -223,7 +223,7 @@ public class AdminErWeiMaservice {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(
 				"yyyy-MM-dd hh:mm:ss");
 		String time = dateFormat.format(date);
-		String hql = "update User u set overdue = 1,u.proxy.id=" + proxyid
+		String hql = "update User u set overdue = 4,u.proxy.id=" + proxyid
 				+ " , u.admin.id=" + adminid + " , u.takeTime='" + time
 				+ "' where id > " + beginid + " and id < " + endid;
 		int n = hqlDAO.update(hql, null);
