@@ -107,6 +107,38 @@ public class WeiXinBangdingService {
 		}
 		return user;
 	}
+	//先绑定后购买
+	public User bangding_buy(String qrid, String chepaihao, String name,
+			String tel, String wx) {
+		String hql = "from User where qrcode =?";
+		List list = hqldao.pageQuery(hql, 1, 1, qrid);
+		User user = new User();
+		if(list.get(0)!=null){
+		user = (User) list.get(0);
+		}
+		user.setName(name);
+		user.setPlateNumber(chepaihao);
+		user.setTel(tel);
+//		user.setOverdue((short) 2);
+		WeixinUser wxuser = wxdao.findById(wx);
+		user.setWeixinUser(wxuser);
+		Calendar c = Calendar.getInstance();
+		c.add(Calendar.YEAR, 3);
+		user.setOverdueTime(new Timestamp(c.getTimeInMillis()));
+		userDAO.merge(user);
+//		Proxy proxy = user.getProxy();
+//		int sumActive = 0;
+//		if (proxy != null) {
+//			if (proxy.getSumActive() == null)
+//				sumActive = 0;
+//			else
+//			    sumActive = proxy.getSumActive();
+//			proxy.setNoActive(proxy.getNoActive() - 1);
+//			proxy.setSumActive(sumActive + 1);
+//			proxyDAO.save(proxy);
+//		}
+		return user;
+	}
 
 	// 判断是否绑定
 	public int panduan(String wx) {

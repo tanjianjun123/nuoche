@@ -322,7 +322,7 @@ public class WeiXinMoveCarAction {
 		// String username = u.getName().substring(0, 1);
 		// request.setAttribute("username", username);
 		request.getSession().setAttribute("uweixinhao", weixinhao);
-		if (n == 1) {
+		if (n == 1||n == 4) {
 			request.getSession().setAttribute("qrid", qrid);
 
 			UserAPI userAPI = new UserAPI();
@@ -330,14 +330,14 @@ public class WeiXinMoveCarAction {
 					WeixinGetAccessTokenListen.access_token, weixinhao);
 			if (weixinUser != null && weixinUser.getSubscribe() != null
 					&& weixinUser.getSubscribe() == 1) {
-				 weixinUserService.addUser(weixinUser);
+				weixinUserService.addUser(weixinUser);
+				if (n == 4) {
+					return "/weixin/bangdingchepai_buy.jsp";
+				}
 				return "/weixin/bangdingchepai.jsp";
 			} else {
 				return "/weixin/guanzhu.jsp";
 			}
-		}
-		if (n == 4) {
-			return "/weixin/bangdingchepai_buy.jsp";
 		}
 
 		if (n == 2) {

@@ -68,9 +68,9 @@ user-scalable - 用户是否可以手动缩放-->
 						<!--  <li>购物优惠<span>－¥ 0.00</span></li>-->
 				<li style="font-size: 16px;">实付款<span><strong>¥ ${sum }</strong></span></li>
 			</ul>
-			<div class="pay_txt" style="color: #999;">
+			<!-- <div class="pay_txt" style="color: #999;">
 				车贴编号： <br />
-			</div>
+			</div> -->
 			<div class="pay_txt" style="color: #999;">
 				订单编号：  ${orderid }<br />创建时间： ${createtime }
 			</div>
