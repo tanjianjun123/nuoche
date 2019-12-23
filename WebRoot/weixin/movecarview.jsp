@@ -76,8 +76,8 @@ user-scalable - 用户是否可以手动缩放-->
 		
 		<li>			
 			
-			<div class="pay_txt" style="color: #999;">
-				&nbsp;车&nbsp;牌&nbsp;号： ${user.plateNumber }<br />
+			<div class="pay_txt" style="color: #999;font-size:50px;text-align:center">
+				<!-- &nbsp;车&nbsp;牌&nbsp;号： --> ${user.plateNumber }<br />
 			</div>
 			<div class="pay_txt" style="color: #999;">
 				车主姓名：${fn:substring(user.name,0,1) }先生/女士 <br />
