@@ -9,6 +9,9 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.listener.WeixinGetAccessTokenListen;
 import com.pojo.Applydetail;
 import com.service.weixin.WeiXinApplyForQrcodeService;
+import com.service.weixin.WeixinUserService;
 import com.util.URLManager;
 import com.weixin.util.ParseXmlUtil;
 
@@ -43,7 +47,8 @@ public class WeiXinAboutAction {
 	private WeiXinApplyForQrcodeService applyForQrcodeService;
 	
 	
-
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	public static void main(String[] args) {
 		String str = "<xml><appid><![CDATA[wx225617f3db0beec0]]></appid><attach><![CDATA[WWW]]></attach><bank_type><![CDATA[CFT]]></bank_type><cash_fee><![CDATA[1]]></cash_fee><fee_type><![CDATA[CNY]]></fee_type><is_subscribe><![CDATA[Y]]></is_subscribe><mch_id><![CDATA[1264112801]]></mch_id><nonce_str><![CDATA[142b954d54be4812a5e2f43c085ffd1c]]></nonce_str><openid><![CDATA[oEaMPwVxbFq4IfHf9ZfPBSdCrkYo]]></openid><out_trade_no><![CDATA[sunjob201704160002]]></out_trade_no><result_code><![CDATA[SUCCESS]]></result_code><return_code><![CDATA[SUCCESS]]></return_code><sign><![CDATA[C3153E0C4AF339B6FE0A052088079260]]></sign><time_end><![CDATA[20160417002008]]></time_end><total_fee>1</total_fee><trade_type><![CDATA[JSAPI]]></trade_type><transaction_id><![CDATA[4001602001201604174916499824]]></transaction_id></xml>";
 		PayNotify payNotify = XMLConverUtil.convertToObject(PayNotify.class,
@@ -88,6 +93,7 @@ public class WeiXinAboutAction {
 		int size = is.read(b);
 		String str = new String(b, 0, size);
 		System.out.println("封装的xml："+str);
+		logger.info("支付封装的xml:"+str);
 		// 获取请求数据
 		PayNotify payNotify = XMLConverUtil.convertToObject(PayNotify.class,
 				str);
@@ -108,13 +114,13 @@ public class WeiXinAboutAction {
 			
 			//  修改会员申请表的状态  修改为已付款
 			applyForQrcodeService.updateStatusByOrderid(trade_no);
-			
-			
+			logger.info("支付成功:"+trade_no);
 			
 			response.getOutputStream().write("success".getBytes());
 
 		} else {
 			response.getOutputStream().write("error".getBytes());
+			logger.error("支付失败:"+payNotify);
 		}
         
 		return null;

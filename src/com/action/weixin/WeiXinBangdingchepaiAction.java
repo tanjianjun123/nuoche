@@ -67,6 +67,7 @@ public class WeiXinBangdingchepaiAction {
 	public String bangding_buy(HttpServletRequest request,HttpServletResponse response)throws IOException{
 		String qrid =(String)request.getSession().getAttribute("qrid");//request.getParameter("qrid");
 		String weixinhao =(String)request.getSession().getAttribute("uweixinhao");// request.getParameter("uweixinhao");
+		request.getSession().setAttribute("openid", weixinhao);
 		logger.info("先绑定后支付：qrid:"+qrid+"--weixinhao："+weixinhao);
 		if (qrid==null || weixinhao==null)
 		{
@@ -76,7 +77,12 @@ public class WeiXinBangdingchepaiAction {
 		String chepaihao  = request.getParameter("chepaihao");
 		String name  = request.getParameter("name");
 		String tel  = request.getParameter("tel");
-		User user = weixinbangdingservice.bangding_buy(qrid,chepaihao, name, tel,weixinhao);
+		
+		//  生成订单号
+		String orderid=applyForQrcodeService.getAllDingdanhao();
+		
+		
+		User user = weixinbangdingservice.bangding_buy(qrid,chepaihao, name, tel,weixinhao,orderid);
 		logger.info("绑定信息存储成功");
 
 
@@ -89,9 +95,8 @@ public class WeiXinBangdingchepaiAction {
 //		//  电话
 //		String tel = request.getParameter("tel");
 //		//  地址
-		String address = "卡已到手，进行绑定中";
-		//  生成订单号
-		String orderid=applyForQrcodeService.getAllDingdanhao();
+		String address = "绑定车牌中";
+	
 		//  微信订单号
 		//创建时间--生成订单时间
 

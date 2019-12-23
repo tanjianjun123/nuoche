@@ -21,6 +21,17 @@ public class User implements java.io.Serializable {
 	private Proxy proxy2; //2级代理
 	private Proxy proxy3; //3级代理
 	
+	//订单id
+	private String orderId;
+	
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
+
 	public Proxy getProxy2() {
 		return proxy2;
 	}

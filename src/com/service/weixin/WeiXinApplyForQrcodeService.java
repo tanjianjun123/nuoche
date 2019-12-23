@@ -68,10 +68,22 @@ public class WeiXinApplyForQrcodeService {
 		return applydetail;
 	}
 	public void updateStatusByOrderid(String orderid) {
+		
+		String hql2 = "update com.pojo.User set overdue=2 where orderId=?";
+		int zsg = hqlDAO.zsg(hql2,orderid);
+		if(zsg==0) {
 		//  付款成功时间
-		Timestamp updatetime = new Timestamp(System.currentTimeMillis());
-		String hql = "update Applydetail set status=2,updated=? where orderId=?";
-		hqlDAO.zsg(hql,updatetime,orderid);
+			Timestamp updatetime = new Timestamp(System.currentTimeMillis());
+			String hql = "update Applydetail set status=2,updated=? where orderId=?";
+			hqlDAO.zsg(hql,updatetime,orderid);
+		}
+		if(zsg==1) {
+		//  付款成功时间
+			Timestamp updatetime = new Timestamp(System.currentTimeMillis());
+			String hql = "update Applydetail set status=4,updated=? where orderId=?";
+			hqlDAO.zsg(hql,updatetime,orderid);
+		}
+		
 	}
 	public void doCancelOrder(String orderid) {
 		String hql = "delete from Applydetail where orderId=?";

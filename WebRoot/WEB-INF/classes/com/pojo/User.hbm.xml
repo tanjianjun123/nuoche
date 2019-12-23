@@ -142,6 +142,11 @@
                 <comment>代理领卡时间</comment>
             </column>
         </property>
+          <property name="orderId" type="java.lang.String">
+            <column name="order_id" length="32">
+                <comment>申请订单号</comment>
+            </column>
+        </property>
         <set name="vipCashs" inverse="true">
             <key>
                 <column name="user_id">

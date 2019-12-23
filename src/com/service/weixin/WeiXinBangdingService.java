@@ -109,7 +109,7 @@ public class WeiXinBangdingService {
 	}
 	//先绑定后购买
 	public User bangding_buy(String qrid, String chepaihao, String name,
-			String tel, String wx) {
+			String tel, String wx,String orderid) {
 		String hql = "from User where qrcode =?";
 		List list = hqldao.pageQuery(hql, 1, 1, qrid);
 		User user = new User();
@@ -125,6 +125,7 @@ public class WeiXinBangdingService {
 		Calendar c = Calendar.getInstance();
 		c.add(Calendar.YEAR, 3);
 		user.setOverdueTime(new Timestamp(c.getTimeInMillis()));
+		user.setOrderId(orderid);
 		userDAO.merge(user);
 //		Proxy proxy = user.getProxy();
 //		int sumActive = 0;
