@@ -423,22 +423,40 @@ public class WeiXinMoveCarAction {
 				.setTemplate_id("Jo2UiIKAxTORS2asl5wOj_N03pm7sFAKf-EbRDgk2Mk");
 
 		// TemplateMessageItem item = new TemplateMessageItem(value, color)
-
+		String type = request.getParameter("type");
 		LinkedHashMap linkedHashMap = new LinkedHashMap();
-		linkedHashMap.put("first", new TemplateMessageItem("尊敬的115挪车用户您好，您收到一条新的挪车请求，请尽快处理，感谢您的支持！",
-				"#173177"));
-		linkedHashMap.put("remark", new TemplateMessageItem("您的爱车"+(StringUtil
-				.isNotNull(wz) ? "位于" : "")
-				+ wz + "影响了我的正常行驶，请您尽快前来处理，谢谢", "#173177"));
-		Date date = new Date();
-		SimpleDateFormat spd = new SimpleDateFormat("yyyy年MM月dd日  HH:mm");
-		String t = spd.format(date);
-		linkedHashMap.put("keyword1",
-				new TemplateMessageItem(chepai, "#173177"));
-		linkedHashMap.put("keyword2", new TemplateMessageItem(t, "#173177"));
+		if("0".equals(type)) {
+			linkedHashMap.put("first", new TemplateMessageItem("尊敬的115挪车用户您好，您收到一条新的挪车请求，请尽快处理，感谢您的支持！",
+					"#173177"));
+			linkedHashMap.put("remark", new TemplateMessageItem("您的爱车"+(StringUtil
+					.isNotNull(wz) ? "位于" : "")
+					+ wz + "影响了我的正常行驶，请您尽快前来处理，谢谢", "#173177"));
+			Date date = new Date();
+			SimpleDateFormat spd = new SimpleDateFormat("yyyy年MM月dd日  HH:mm");
+			String t = spd.format(date);
+			linkedHashMap.put("keyword1",
+					new TemplateMessageItem(chepai, "#173177"));
+			linkedHashMap.put("keyword2", new TemplateMessageItem(t, "#173177"));
 
-		//System.out.println(linkedHashMap.size());
-		templateMessage.setData(linkedHashMap);
+			//System.out.println(linkedHashMap.size());
+			templateMessage.setData(linkedHashMap);
+		}else {
+			linkedHashMap.put("first", new TemplateMessageItem("尊敬的115挪车用户您好，您收到一条新的剐蹭通知，请尽快查看，感谢您的支持！",
+					"#173177"));
+			linkedHashMap.put("remark", new TemplateMessageItem("您的爱车"+(StringUtil
+					.isNotNull(wz) ? "位于" : "")
+					+ wz + "被我不小心剐蹭，请您尽快前来处理，谢谢", "#173177"));
+			Date date = new Date();
+			SimpleDateFormat spd = new SimpleDateFormat("yyyy年MM月dd日  HH:mm");
+			String t = spd.format(date);
+			linkedHashMap.put("keyword1",
+					new TemplateMessageItem(chepai, "#173177"));
+			linkedHashMap.put("keyword2", new TemplateMessageItem(t, "#173177"));
+
+			//System.out.println(linkedHashMap.size());
+			templateMessage.setData(linkedHashMap);
+		}
+		
 		MessageAPI messageAPI = new MessageAPI();
 
 		String appid = WeixinConfig.APPID;

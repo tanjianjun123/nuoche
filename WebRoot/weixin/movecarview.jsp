@@ -29,7 +29,8 @@ user-scalable - 用户是否可以手动缩放-->
 <link href="${pageContext.request.contextPath }/weixin/css/font-awesome.css" rel="stylesheet" type="text/css">
 
 <!--页面滚动插件-->
-
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/weixin/css/mobileSelect.css">
+<script src="${pageContext.request.contextPath }/weixin/js/mobileSelect.min.js" type="text/javascript"></script>
 
 <script type="text/javascript" src = "${pageContext.request.contextPath }/weixin/js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src = "${pageContext.request.contextPath }/weixin/js/jquery.form.js"></script>
@@ -68,7 +69,6 @@ user-scalable - 用户是否可以手动缩放-->
 
 </head>
 <body>
-
 <div id="wrapper" style="top: 0;bottom:0">
 	<ul>
 		<li class="paymentIngT">车主信息</li>
@@ -92,10 +92,12 @@ user-scalable - 用户是否可以手动缩放-->
 			
 			
 		</li>
+		
 		<li class="butB" name="li1">
 			
 			<form action="" method="post" name="myform">
-				<input type="button" class="button" value="微信通知"  id="phone_btn" name="phone" onclick="showtime(10)">
+				<!-- <input type="button" class="button" value="微信通知"  id="phone_btn" name="phone" onclick="showtime(10)"> -->
+				<input type="button" class="button" value="微信通知"  id="phone_btn" name="phone"/> <!--页面中别漏了这个trigger-->
 			</form>
 			
 		</li>
@@ -177,7 +179,6 @@ user-scalable - 用户是否可以手动缩放-->
 
 
 
-</script>
 <script type="text/javascript" src="js/wxshare.js"></script>
 
  <input type="hidden" value="${weixinhao}" id="weixinhao" />
@@ -200,12 +201,12 @@ function update(num) {
 	}
 }
 
-function showtime(t){
+function showtime(t,type){
 	document.myform.phone.disabled=true;
-	
+	console.log(type);
 	var weizhin = document.getElementById("weixin1").value;
 	var cpqz=encodeURI(encodeURI("${user.chepaiqianzhui}"));
-		var url="${pageContext.request.contextPath}/move.do?p=dxtongzhi&wxh=${user.weixinUser.openid }&tel=${user.tel}&chepai=${user.plateNumber}&cpqz="+cpqz+"&user_wx=${user_wx}";
+		var url="${pageContext.request.contextPath}/move.do?p=dxtongzhi&wxh=${user.weixinUser.openid }&tel=${user.tel}&chepai=${user.plateNumber}&cpqz="+cpqz+"&user_wx=${user_wx}&type="+type;
 		var param={weizhin:weizhin};
 		$.post(url,param,function(data){
 		var json=eval("("+data+")");
@@ -408,8 +409,19 @@ function showtime4(){
 	});
 </script>
 
-
-
+<script type="text/javascript">
+var mobileSelect1 = new MobileSelect({
+    trigger: '#phone_btn', 
+    title: '通知事项',  
+    wheels: [
+                {data:['挪车通知','剐蹭通知']}
+            ],
+    position:[0],//初始化定位
+	callback:function(indexArr, data){
+		showtime(10,indexArr[0]);
+	}
+});
+</script>
 
 
 </body>

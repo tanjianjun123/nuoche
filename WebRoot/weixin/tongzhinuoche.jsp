@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>挪车通知</title>
+    <title>115挪车通知</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -37,7 +37,7 @@ border-bottom: 2px solid #ffd324;
 
 <div style="margin:30% 0 0 0">
 <div style=" text-align:center;" ><img src="${pageContext.request.contextPath }/weixin/images/jinggao.png" style="width:300px;height:300px;"></div>
-<div class="alert"><span style="font-size:40px;">您的爱车影响他人正常行驶，请尽快赶回驻车处挪车！</span></div>
+<div class="alert"><span style="font-size:40px;">您的爱车影响他人正常行驶或者发生紧急情况，请尽快赶回驻车处处理！</span></div>
 </div>
 </body>
 </html>
