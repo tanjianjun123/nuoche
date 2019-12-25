@@ -51,7 +51,7 @@
 <link href="${pageContext.request.contextPath }/lib/css/style.css"
 	rel="stylesheet" type="text/css" />
 
-<title>115挪车-代理管理员后台</title>
+<title>115挪车-代理商后台</title>
 <meta name="keywords"
 	content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
 <meta name="description"
@@ -62,7 +62,7 @@
 		<c:redirect url="/daili/login.jsp"></c:redirect>
 	</c:if>
 	<header class="Hui-header cl">
-		<a class="Hui-logo l" title="代理管理员后台" href="/">代理管理员后台</a> <a
+		<a class="Hui-logo l" title="代理商后台" href="/">代理商后台</a> <a
 			class="Hui-logo-m l" href="/" title="H-ui.admin">H-uihit</a> <span
 			class="Hui-subtitle l">V1.0</span>
 		<nav class="mainnav cl" id="Hui-nav"></nav>
@@ -109,7 +109,7 @@
 	<aside class="Hui-aside">
 		<input runat="server" id="divScrollValue" type="hidden" value="" />
 		<div class="menu_dropdown bk_2">
-			<dl id="menu-picture">
+			<%-- <dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe67f;</i> 基础参数 <i
 						class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -124,7 +124,7 @@
 							</li>
 					</ul>
 				</dd>
-			</dl>
+			</dl> --%>
 			<dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe6cc;</i>子代理管理 <i
@@ -149,18 +149,20 @@
 					<ul>
 						<li><a
 							_href="${pageContext.request.contextPath}/daili_users.do?p=userlisting&type=1"
-							data-title="会员列表">会员列表</a> <a
+							data-title="用户列表">用户列表</a> 
+							<%-- <a
 							_href="${pageContext.request.contextPath}/daili_users.do?p=userlisting&type=2"
-							data-title="已到期">已到期</a> <a
+							data-title="已到期">已到期</a>
+							 <a
 							_href="${pageContext.request.contextPath}/daili_users.do?p=userlisting&type=3"
-							data-title="即将到期">即将到期</a> <!--   <a_href="${pageContext.request.contextPath}/daili_users.do?p=usersyuyuelisting&status=1"
+							data-title="即将到期">即将到期</a> --%> <!--   <a_href="${pageContext.request.contextPath}/daili_users.do?p=usersyuyuelisting&status=1"
 							data-title="会员预约记录">会员预约记录</a>   --></li>
 					</ul>
 				</dd>
 			</dl>
 			
 			
-			<dl id="menu-picture">
+		<%-- 	<dl id="menu-picture">
 				<dt>
 					<i class="Hui-iconfont">&#xe6cc;</i> 加油站管理 <i
 						class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -286,8 +288,8 @@
 							data-title="新增轮播">新增轮播</a></li>
 					</ul>
 				</dd>
-			</dl>
-			<dl id="menu-picture" style="display: none;">
+			</dl> --%>
+			<%-- <dl id="menu-picture" style="display: none;">
 				<dt>
 					<i class="Hui-iconfont">&#xe6be;</i> 二维码管理 <i
 						class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
@@ -299,7 +301,7 @@
 							data-title="二维码收售记录">二维码收售记录</a></li>
 					</ul>
 				</dd>
-			</dl>
+			</dl> --%>
 
 			<dl id="menu-picture">
 				<dt>
@@ -326,11 +328,12 @@
 				<dd>
 					<ul>
 						<li><a
-							_href="${pageContext.request.contextPath}/daili_chongzhi.do?p=chongzhilisting"
-							data-title="充值记录">充值记录</a> <a
+							<%-- _href="${pageContext.request.contextPath}/daili_chongzhi.do?p=chongzhilisting"
+							data-title="充值记录">充值记录</a> --%>
+							 <a
 							_href="${pageContext.request.contextPath}/daili_tixian.do?p=tixianlisting&proxyid=${proxy.id }"
 							data-title="提现申请">提现申请</a></li>
-						<li><a
+						<%-- <li><a
 							_href="${pageContext.request.contextPath}/daili_zhidingjilu.do?p=zhidinglisting"
 							data-title="置顶记录">置顶记录</a> <a
 							_href="${pageContext.request.contextPath}/daili_lunbojilu.do?p=lunbolisting"
@@ -339,7 +342,7 @@
 							_href="${pageContext.request.contextPath}/daili_yuyue.do?p=yuyuelisting"
 							data-title="预约记录">预约记录</a><a
 							_href="${pageContext.request.contextPath}/daili_huiyuanxufei.do?p=xufeilisting"
-							data-title="会员续费记录">会员续费记录</a></li>
+							data-title="会员续费记录">会员续费记录</a></li> --%>
 					</ul>
 				</dd>
 			</dl>
