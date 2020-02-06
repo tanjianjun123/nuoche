@@ -73,7 +73,9 @@ public class WeinxinIndexAction {
 			EventMessage eventMessage = XMLConverUtil.convertToObject(
 					EventMessage.class, inputStream);
 			// 推荐人
-			String eventKey = eventMessage.getEventKey();
+			String eventKey3 = eventMessage.getEventKey();
+			String eventKey2 = eventKey3;
+			String eventKey = eventKey2;
 			String Ticket = eventMessage.getTicket();
 			/*if (Ticket != null && eventKey != null) {
 				String[] key = eventKey.split("_");
@@ -151,6 +153,39 @@ public class WeinxinIndexAction {
 				textMessage.setToUserName(eventMessage.getFromUserName());
 				response.getWriter().print(TextMessageToXml(textMessage));
 				return null;
+			}
+			if("CLICK".equals(Event)) {
+				String key=eventMessage.getEventKey();
+				System.out.println(key);
+				if(key.contains("car")) {
+					com.weixin.pojo.TextMessage textMessage = new com.weixin.pojo.TextMessage();
+					textMessage.setContent("我是115挪车管家，很高心为您服务，此功能正在开发中。");
+					textMessage.setCreateTime(new Date().getTime());
+					textMessage.setFromUserName(eventMessage.getToUserName());
+					textMessage.setMsgType("text");
+					textMessage.setMsgId(eventMessage.getMsgId());
+					textMessage.setToUserName(eventMessage.getFromUserName());
+					response.setCharacterEncoding("utf-8");
+					response.getWriter().print(TextMessageToXml(textMessage));
+					return null;
+				}
+				if(key.equals("contact_us")) {
+					com.weixin.pojo.TextMessage textMessage = new com.weixin.pojo.TextMessage();
+					StringBuffer content=new StringBuffer();
+					content.append("热线电话：0551-67892532/17009603333").append("\n");
+					content.append("上班时间：周一到周六").append("\n");
+					content.append("早上：9：00-12：00").append("\n");
+					content.append("下午：14：00-17：00");
+					textMessage.setContent(content.toString());
+					textMessage.setCreateTime(new Date().getTime());
+					textMessage.setFromUserName(eventMessage.getToUserName());
+					textMessage.setMsgType("text");
+					textMessage.setMsgId(eventMessage.getMsgId());
+					textMessage.setToUserName(eventMessage.getFromUserName());
+					response.setCharacterEncoding("utf-8");
+					response.getWriter().print(TextMessageToXml(textMessage));
+					return null;
+				}
 			}
 			// -----------------------------------------------------------------
 
@@ -245,19 +280,95 @@ public class WeinxinIndexAction {
 
 		// -----------------------菜单1选项--------------------
 		Button btnOne = new Button();// 第一个按钮
-		btnOne.setType("view");
-		btnOne.setName("扫码挪车");
+		btnOne.setType("click");
+		btnOne.setName("挪车服务");
 		btnOne.setKey("MENU_ONE");
+		
+
+		Button btnThree4 = new Button();// 第一个按钮
+		btnThree4.setType("view");
+		btnThree4.setName("扫码挪车");
+		btnThree4.setKey("MENU_ONE");
 		String url = URLManager.getServerURL(request)
 				+ "/move.do?p=moveCar2";
 		System.out.print(url);
-		btnOne.setUrl(url);
+		btnThree4.setUrl(url);
+		
+		// 3.1 申请二维码
+		
+		Button btnThree1 = new Button();
+		btnThree1.setName("申请挪车码");
+		btnThree1.setType("view");
+		String url3_1 = URLManager.getServerURL(request)
+				+ "/applyforqrcode.do?method=applyforqrcodeindex";
+		String newurl3_1 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+				+ WeixinConfig.APPID
+				+ "&redirect_uri="
+				+ URLEncoder.encode(url3_1, "utf-8")
+				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+		btnThree1.setUrl(newurl3_1);
+
+		// 3.2 绑定车牌
+		Button btnThree2 = new Button();
+		btnThree2.setType("view");
+		btnThree2.setName("绑定车牌");
+		String url3_2 = URLManager.getServerURL(request)
+				+ "/move.do?p=moveCar2";
+		String newUrl3_2 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+				+ WeixinConfig.APPID
+				+ "&redirect_uri="
+				+ URLEncoder.encode(url3_2, "utf-8")
+				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+		btnThree2.setUrl(newUrl3_2);
+		
+		Button btnThree5 = new Button();// 第一个按钮
+		btnThree5.setType("view");
+		btnThree5.setName("挪车码用途");
+		String url2 ="https://mp.weixin.qq.com/s?__biz=MzIyMzEzMjI3OQ==&mid=2247483656&idx=1&sn=77f640ed6ed89d379af553e89a32a3ac&chksm=e823ae10df542706c7d82e8bf4e61ae0f149c11b5a09f1cbfb99721b74ae4fea91ee3534e9f2&token=875666367&lang=zh_CN#rd";
+		btnThree5.setUrl(url2);
+		
+		
+		
+		List<Button> list2 = new ArrayList<Button>();
+		list2.add(btnThree1);
+		list2.add(btnThree2);
+		list2.add(btnThree4);
+		list2.add(btnThree5);
+		
+		btnOne.setSub_button(list2);
+		
+		
+		
 		
 		// -------------菜单2选项--------------
 		Button btnTwo = new Button();// 第二个按钮
 		btnTwo.setType("click");
-		btnTwo.setName("申请挪车码");
+		btnTwo.setName("车主服务");
 		btnTwo.setKey("MENU_TWO");
+//		
+		Button btnTwo1 = new Button();// 第一个按钮
+		btnTwo1.setType("click");
+		btnTwo1.setName("汽车美容服务");
+		btnTwo1.setKey("car_beauty");
+		
+		Button btnTwo2 = new Button();// 第一个按钮
+		btnTwo2.setType("click");
+		btnTwo2.setName("二手车买卖服务");
+		btnTwo2.setKey("used_car");
+		
+		Button btnTwo3 = new Button();// 第一个按钮
+		btnTwo3.setType("click");
+		btnTwo3.setName("汽车商城");
+		btnTwo3.setKey("car_mall");
+//		
+		
+		List<Button> list4 = new ArrayList<Button>();
+		list4.add(btnTwo1);
+		list4.add(btnTwo2);
+		list4.add(btnTwo3);
+		
+		btnTwo.setSub_button(list4);
+		
 		
 		// 2.1
 //		Button btnTwo1 = new Button();
@@ -311,54 +422,16 @@ public class WeinxinIndexAction {
 //		btnTwo4.setUrl(newUrl_btnTwo4);// 两个不同的浏览器 session不一样 .do有缓存
 	
 		
-		// 3.1 申请二维码
-		Button btnThree1 = new Button();
-		btnThree1.setName("申请挪车码");
-		btnThree1.setType("view");
-		String url3_1 = URLManager.getServerURL(request)
-				+ "/applyforqrcode.do?method=applyforqrcodeindex";
-		String newurl3_1 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
-				+ WeixinConfig.APPID
-				+ "&redirect_uri="
-				+ URLEncoder.encode(url3_1, "utf-8")
-				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-		btnThree1.setUrl(newurl3_1);
-
-		// 3.2 绑定车牌
-		Button btnThree2 = new Button();
-		btnThree2.setType("view");
-		btnThree2.setName("绑定车牌");
-		String url3_2 = URLManager.getServerURL(request)
-				+ "/move.do?p=moveCar2";
-		String newUrl3_2 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
-				+ WeixinConfig.APPID
-				+ "&redirect_uri="
-				+ URLEncoder.encode(url3_2, "utf-8")
-				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
-		btnThree2.setUrl(newUrl3_2);
-		
-		
-		
-		
-		
-		List<Button> list2 = new ArrayList<Button>();
-//		list2.add(btnTwo1);
-		list2.add(btnThree1);
-		list2.add(btnThree2);
-//		list2.add(btnTwo3);
-//		list2.add(btnTwo4);
-		
-		btnTwo.setSub_button(list2);
 		//-------------------------菜单3选项----------------
 		Button btnThree = new Button();// 第三个按钮
 		btnThree.setType("click");
-		btnThree.setName("我的");
+		btnThree.setName("服务中心");
 		btnThree.setKey("MENU_THREE");
 
 	
 		//3.3 个人中心
 		Button btnThree3 = new Button();
-		btnThree3.setName("个人中心");
+		btnThree3.setName("个人信息");
 		btnThree3.setType("view");
 		String url3_3 = URLManager.getServerURL(request)
 				+ "/personCenter.do?method=index";
@@ -368,6 +441,35 @@ public class WeinxinIndexAction {
 				+ URLEncoder.encode(url3_3, "utf-8")
 				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
 		btnThree3.setUrl(newUrl3_3);
+		
+		Button btnThree8 = new Button();// 第一个按钮
+		btnThree8.setType("click");
+		btnThree8.setName("常见问题");
+		btnThree8.setKey("car");
+		
+		Button btnThree6 = new Button();
+		btnThree6.setName("联系我们");
+		btnThree6.setType("click");
+		btnThree6.setKey("contact_us");
+				
+		Button btnThree7 = new Button();
+		btnThree7.setName("关于我们");
+		btnThree7.setType("view");
+		String url3_4 = URLManager.getServerURL(request)
+				+ "/aboutwe.do?p=aboutwe";
+		String newUrl3_4 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+				+ WeixinConfig.APPID
+				+ "&redirect_uri="
+				+ URLEncoder.encode(url3_4, "utf-8")
+				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+		btnThree7.setUrl(newUrl3_4);
+		
+		List<Button> list3 = new ArrayList<Button>();
+		list3.add(btnThree3); // 个人中心
+		list3.add(btnThree8); 
+		list3.add(btnThree6); 
+		list3.add(btnThree7); 
+		btnThree.setSub_button(list3);
 		
 //		Button btnThree4 = new Button();
 //		btnThree4.setName("免费电话");
@@ -381,12 +483,7 @@ public class WeinxinIndexAction {
 //				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
 //		btnThree4.setUrl(newUrl3_4);
 		
-		List<Button> list3 = new ArrayList<Button>();
-//		list3.add(btnThree1);//  申请二维码
-//		list3.add(btnThree2); // 绑定车牌
-//		list3.add(btnThree4); // 免费电话
-		list3.add(btnThree3); // 个人中心
-		btnThree.setSub_button(list3);
+	
 		
 		
         //-------------------------------------------------
