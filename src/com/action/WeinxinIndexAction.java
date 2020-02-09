@@ -443,9 +443,16 @@ public class WeinxinIndexAction {
 		btnThree3.setUrl(newUrl3_3);
 		
 		Button btnThree8 = new Button();// 第一个按钮
-		btnThree8.setType("click");
+		btnThree8.setType("view");
 		btnThree8.setName("常见问题");
-		btnThree8.setKey("car");
+		String url3_5 = URLManager.getServerURL(request)
+				+ "/question.do?p=all";
+		String newUrl3_5 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="
+				+ WeixinConfig.APPID
+				+ "&redirect_uri="
+				+ URLEncoder.encode(url3_5, "utf-8")
+				+ "&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
+		btnThree8.setUrl(newUrl3_5);
 		
 		Button btnThree6 = new Button();
 		btnThree6.setName("联系我们");
