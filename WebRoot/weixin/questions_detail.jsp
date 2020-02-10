@@ -44,7 +44,7 @@ user-scalable - 用户是否可以手动缩放-->
 <!--页面滚动插件-->
 <script src="${pageContext.request.contextPath }/weixin/js/iscroll.js"></script>
          
-<title>常见问题</title>
+<title>问题详情</title>
 
 
 </head>
@@ -58,22 +58,16 @@ user-scalable - 用户是否可以手动缩放-->
 		
 		<li>
 			<ul class="fillList lineHeightA" style="margin-top: 0; border-top: none;">
-				<c:forEach items="${questions}" var="list" >
-					<li onclick="detail(${list.id})">
-						<span class="fill_inA" style="width:auto;text-align:left;">${list.title}</span>
-						<span class="fill_inBs" id="totalPrice" >	<img src="${pageContext.request.contextPath }/weixin/images/symbol.png" style="width: 15px;"/></span>
-					</li>
-				</c:forEach>	
+					<li>
+						<span class="fill_inA" style="width:auto;text-align:left;font-size:18px;">${question.title}</span>
+				   </li>
+				   <li>
+						<span style="width:auto;text-align:left;border: none;">${question.content}</span>
+				   </li>
 			</ul>
 		</li>
 	</ul>
 </div>
-<script>
-function detail(id){	
-	window.location.href="${pageContext.request.contextPath }/question.do?p=detail&id="+id;
-}
-
-</script>
 </body>
 
 </html>
