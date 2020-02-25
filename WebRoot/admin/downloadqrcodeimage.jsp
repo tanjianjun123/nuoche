@@ -59,7 +59,8 @@ input[type='text'],select {
 			<tr class="ttk">
 				<td align="right" style="vertical-align: middle;">请选择下载二维码数量：
 				</td>
-				<td>
+				<td><input type="text" id="num" name="num" value="" /></td>
+				<!-- <td>
 					<select class="select" id="num" name="num" style="width: 110px;float: left;height:30px;">
 						<option value="1">&nbsp;1&nbsp;</option>
 						<option value="5">&nbsp;5&nbsp;</option>
@@ -72,7 +73,7 @@ input[type='text'],select {
 						<option value="20000">&nbsp;20000&nbsp;</option>
 						<option value="30000">&nbsp;30000&nbsp;</option>
 					</select>
-				</td>
+				</td> -->
 			</tr>
 			<tr class="ttk">
 				<td colspan="2" align="center">
